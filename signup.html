@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Member Registration &amp; Sign Up | VALÉRA Women's Studio</title>
+  <meta name="description" content="Create your Valéra Member Account to begin your strength training, Reformer Pilates, and holistic movement journey." />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+
+  <!-- Prevent Flash of Unstyled Theme & Direction -->
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('valera_theme_preference') || 'light';
+        var dir = localStorage.getItem('valera_dir_preference') || 'ltr';
+        document.documentElement.setAttribute('data-theme', saved);
+        document.documentElement.setAttribute('dir', dir);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5.3 CSS & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- Custom Design System Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="auth-page">
+
+  <main class="auth-section">
+    <div class="auth-card-single" style="max-width: 520px;">
+
+      <!-- Brand Icon + Brand Name Top Center Inside Card -->
+      <div class="auth-brand-top">
+        <a href="index.html" class="navbar-brand-valera" aria-label="Valéra Home">
+          <span class="brand-icon-mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 18L32 48L48 18" stroke="#FAF7F2" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M24 18L32 33L40 18" stroke="#C8A273" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="32" cy="13" r="3.5" fill="#D46F58"/>
+            </svg>
+          </span>
+          <span class="brand-text-stack">
+            <span class="brand-title">VALÉRA</span>
+            <span class="brand-subtitle">Strength &amp; Wellness Atelier</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="text-center mb-4">
+        <h1 class="display-md mb-1">Create Your <span class="italic-accent">Valéra</span> Profile</h1>
+        <p class="small text-secondary mb-0">
+          Complete your profile details and choose your primary training focus.
+        </p>
+      </div>
+
+      <!-- Frontend Demo Registration Confirmation -->
+      <div id="signupDemoFeedback" class="d-none p-4 rounded-4 mb-4 border" style="background-color: var(--brand-mauve-soft); border-color: var(--brand-mauve) !important;">
+        <div class="d-flex align-items-start gap-3">
+          <i class="bi bi-check-circle-fill fs-3" style="color: var(--brand-mauve);"></i>
+          <div>
+            <h2 class="h4 display-font mb-1">Welcome to Valéra, <span data-signup-name>Member</span>!</h2>
+            <p class="small text-secondary mb-2">
+              Your registration form passed all validation checks. <em>(Standalone frontend UI demonstration.)</em>
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <a href="dashboard.html" class="btn-valera-primary py-2 px-3">Open Dashboard</a>
+              <a href="login.html" class="btn-valera-outline py-2 px-3">Proceed to Login</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Every Input Field on Separate Lines -->
+      <form id="valeraSignupForm" novalidate>
+        <!-- 1. Full Name -->
+        <div class="mb-3">
+          <label for="signupName" class="form-label-valera">Full Name *</label>
+          <input type="text" id="signupName" class="form-control-valera" placeholder="e.g., Camille Sterling" autocomplete="name" required />
+          <div class="invalid-feedback-valera">Please enter your full name.</div>
+        </div>
+
+        <!-- 2. Email Address -->
+        <div class="mb-3">
+          <label for="signupEmail" class="form-label-valera">Email Address *</label>
+          <input type="email" id="signupEmail" class="form-control-valera" placeholder="camille@example.com" autocomplete="email" required />
+          <div class="invalid-feedback-valera">Please enter a valid email address.</div>
+        </div>
+
+        <!-- 3. Mobile Number -->
+        <div class="mb-3">
+          <label for="signupMobile" class="form-label-valera">Mobile Number *</label>
+          <input type="tel" id="signupMobile" class="form-control-valera" placeholder="+1 (555) 234-5678" autocomplete="tel" required />
+          <div class="invalid-feedback-valera">Please enter a valid mobile number.</div>
+        </div>
+
+        <!-- 4. Fitness Goal Selection -->
+        <div class="mb-3">
+          <label for="signupGoal" class="form-label-valera">Fitness Goal *</label>
+          <select id="signupGoal" class="form-select-valera" required>
+            <option value="">Select your fitness goal...</option>
+            <option value="Strength & Lean Muscle">Strength &amp; Lean Muscle Tone</option>
+            <option value="Beginner Confidence">Beginner Fitness Confidence</option>
+            <option value="Core, Posture & Pilates">Core, Posture &amp; Pilates</option>
+            <option value="Cardio Endurance & Energy">Cardio Endurance &amp; Energy</option>
+            <option value="Mobility & Stress Recovery">Mobility &amp; Stress Recovery</option>
+          </select>
+          <div class="invalid-feedback-valera">Please select your fitness goal.</div>
+        </div>
+
+        <!-- 5. Preferred Fitness Program -->
+        <div class="mb-3">
+          <label for="signupProgram" class="form-label-valera">Preferred Fitness Program *</label>
+          <select id="signupProgram" class="form-select-valera" required>
+            <option value="">Choose your preferred program track...</option>
+            <option value="Strength & Conditioning">Strength &amp; Conditioning (Barbell, Kettlebell &amp; Sculpt)</option>
+            <option value="Cardio & Movement">Cardio &amp; Movement (HIIT, Indoor Cycling &amp; Dance)</option>
+            <option value="Mind & Body">Mind &amp; Body (Reformer Pilates, Yoga &amp; Mobility)</option>
+            <option value="Personal Training">1-on-1 Personal Training</option>
+            <option value="All-Access Hybrid">All-Access Hybrid Membership</option>
+          </select>
+          <div class="invalid-feedback-valera">Please select a preferred fitness program.</div>
+        </div>
+
+        <!-- 6. Password -->
+        <div class="mb-3">
+          <label for="signupPassword" class="form-label-valera">Password * (Min. 8 chars)</label>
+          <div class="password-field-wrapper">
+            <input type="password" id="signupPassword" class="form-control-valera pe-5" placeholder="Create password" autocomplete="new-password" required />
+            <button type="button" class="password-toggle-btn" data-password-toggle="signupPassword" aria-label="Show password">
+              <i class="bi bi-eye"></i>
+            </button>
+          </div>
+          <div class="invalid-feedback-valera">Password must be at least 8 characters long.</div>
+        </div>
+
+        <!-- 7. Confirm Password -->
+        <div class="mb-3">
+          <label for="signupConfirmPassword" class="form-label-valera">Confirm Password *</label>
+          <div class="password-field-wrapper">
+            <input type="password" id="signupConfirmPassword" class="form-control-valera pe-5" placeholder="Confirm password" autocomplete="new-password" required />
+            <button type="button" class="password-toggle-btn" data-password-toggle="signupConfirmPassword" aria-label="Show confirm password">
+              <i class="bi bi-eye"></i>
+            </button>
+          </div>
+          <div class="invalid-feedback-valera">Passwords must match.</div>
+        </div>
+
+        <!-- 8. Terms and Conditions Acceptance -->
+        <div class="mb-4">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="signupTerms" required />
+            <label class="form-check-label small text-secondary" for="signupTerms">
+              I agree to the Valéra Studio <a href="about.html" class="fw-semibold text-decoration-underline">Member Etiquette</a>, <a href="contact.html" class="fw-semibold text-decoration-underline">Terms &amp; Conditions</a>, and Health Waiver. *
+            </label>
+            <div class="invalid-feedback-valera">You must accept the studio terms and conditions to register.</div>
+          </div>
+        </div>
+
+        <!-- 9. Create Account Button -->
+        <button type="submit" class="btn-valera-primary w-100 py-3">
+          Create Account <i class="bi bi-arrow-up-right ms-1"></i>
+        </button>
+      </form>
+
+      <!-- Bottom Social Sign-Up Icons (Google & Apple) -->
+      <div class="auth-social-divider">Or sign up with</div>
+      <div class="auth-social-buttons mb-4">
+        <button type="button" class="btn-social-auth" onclick="document.getElementById('signupDemoFeedback').classList.remove('d-none');">
+          <i class="bi bi-google"></i>
+          <span>Google</span>
+        </button>
+        <button type="button" class="btn-social-auth" onclick="document.getElementById('signupDemoFeedback').classList.remove('d-none');">
+          <i class="bi bi-apple"></i>
+          <span>Apple</span>
+        </button>
+      </div>
+
+      <div class="text-center pt-3 border-top small text-secondary" style="border-color: var(--border-subtle) !important;">
+        Already have a Valéra Member account?
+        <a href="login.html" class="fw-bold ms-1 text-decoration-underline" style="color: var(--brand-mauve);">Sign In Here</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fitness Classes &amp; Weekly Schedule | VALÉRA Women's Studio</title>
+  <meta name="description" content="Explore Valéra's 12 signature women's fitness classes across Strength & Conditioning, Cardio & Movement, and Mind & Body, plus our weekly studio schedule." />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+
+  <!-- Prevent Flash of Unstyled Theme & Direction -->
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('valera_theme_preference') || 'light';
+        var dir = localStorage.getItem('valera_dir_preference') || 'ltr';
+        document.documentElement.setAttribute('data-theme', saved);
+        document.documentElement.setAttribute('dir', dir);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5.3 CSS & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- Custom Design System Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ========================================================================
+       MANDATORY STICKY NAVIGATION BAR
+       ======================================================================== -->
+  <header class="valera-navbar" role="banner">
+    <div class="container-fluid">
+      <a href="index.html" class="navbar-brand-valera" aria-label="Valéra Home">
+        <span class="brand-icon-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 18L32 48L48 18" stroke="#FAF7F2" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M24 18L32 33L40 18" stroke="#C8A273" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="32" cy="13" r="3.5" fill="#D46F58"/>
+          </svg>
+        </span>
+        <span class="brand-text-stack">
+          <span class="brand-title">VALÉRA</span>
+          <span class="brand-subtitle">Strength &amp; Wellness Atelier</span>
+        </span>
+      </a>
+
+      <div class="d-flex align-items-center gap-2 d-lg-none">
+        <button type="button" class="theme-toggle-btn rtl-toggle-btn" data-rtl-toggle aria-label="Toggle RTL direction" aria-pressed="false">RTL</button>
+        <button type="button" class="theme-toggle-btn" data-theme-toggle aria-label="Switch theme">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+        <button type="button" class="valera-hamburger" id="valeraHamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="valeraNavCollapse">
+          <i class="bi bi-list fs-4"></i>
+        </button>
+      </div>
+
+      <nav class="valera-nav-collapse" id="valeraNavCollapse" aria-label="Main Navigation">
+        <ul class="valera-nav-menu">
+          <li class="valera-nav-item valera-dropdown">
+            <button type="button" class="valera-nav-link valera-dropdown-toggle" aria-expanded="false">
+              <span>Home</span>
+              <i class="bi bi-chevron-down dropdown-SingleChevron"></i>
+            </button>
+            <ul class="valera-dropdown-menu" aria-label="Home variations">
+              <li>
+                <a href="index.html" class="valera-dropdown-item">
+                  <span class="item-title">Home 1 — Sanctuary Flagship <i class="bi bi-arrow-up-right"></i></span>
+                  <span class="item-desc">Cinematic strength &amp; athletic club experience</span>
+                </a>
+              </li>
+              <li>
+                <a href="home-2.html" class="valera-dropdown-item">
+                  <span class="item-title">Home 2 — Editorial Atelier <i class="bi bi-arrow-up-right"></i></span>
+                  <span class="item-desc">Lifestyle movement, pilates &amp; member chronicle</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="valera-nav-item"><a href="about.html" class="valera-nav-link">About</a></li>
+          <li class="valera-nav-item"><a href="classes.html" class="valera-nav-link active">Classes</a></li>
+          <li class="valera-nav-item"><a href="trainers.html" class="valera-nav-link">Trainers</a></li>
+          <li class="valera-nav-item"><a href="contact.html" class="valera-nav-link">Contact</a></li>
+          <li class="valera-nav-item"><a href="dashboard.html" class="valera-nav-link">Dashboard</a></li>
+        </ul>
+
+        <div class="valera-nav-actions d-none d-lg-flex">
+          <button type="button" class="theme-toggle-btn rtl-toggle-btn" data-rtl-toggle aria-label="Toggle RTL direction" aria-pressed="false">RTL</button>
+          <button type="button" class="theme-toggle-btn" data-theme-toggle aria-label="Switch theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <a href="signup.html" class="btn-valera-primary btn-nav-join">
+            Sign Up <i class="bi bi-arrow-up-right"></i>
+          </a>
+        </div>
+
+        <div class="valera-nav-actions-mobile d-lg-none">
+          <a href="signup.html" class="btn-valera-primary w-100">
+            Sign Up <i class="bi bi-arrow-up-right"></i>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         1. UNIFORM NON-HOME PAGE HERO (.page-hero-valera)
+         ====================================================================== -->
+    <section class="page-hero-valera">
+      <div class="container">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-7">
+            <span class="eyebrow" data-gsap-hero>Curated Curriculum &bull; 12 Disciplines</span>
+            <h1 class="display-xl mb-3" data-gsap-hero>
+              Intelligent Movement for Every <span class="italic-accent">Season</span> of Strength.
+            </h1>
+            <p class="lead-editorial mb-4" data-gsap-hero>
+              Whether you are picking up a kettlebell for the first time, training for athletic power, or seeking deep spinal restoration, our 12 specialized classes are capped at 12 women to guarantee personal coaching.
+            </p>
+            <div class="d-flex flex-wrap gap-3" data-gsap-hero>
+              <a href="#schedule-preview" class="btn-valera-primary">
+                Jump to Weekly Schedule <i class="bi bi-calendar3 ms-1"></i>
+              </a>
+              <a href="dashboard.html" class="btn-valera-outline">
+                Book in Member Dashboard
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="rounded-4 overflow-hidden shadow-md" style="aspect-ratio: 16/10;" data-gsap-hero>
+              <img src="assets/images/women-dumbbell-group.jpg" alt="Women practicing group dumbbell strength training in Valéra studio" class="w-100 h-100 object-fit-cover" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         2. INTERACTIVE CATEGORY & FITNESS LEVEL FILTER BAR
+         ====================================================================== -->
+    <section class="py-4 bg-editorial-surface border-bottom sticky-top" style="top: var(--navbar-height); z-index: 1020; border-color: var(--border-subtle) !important;">
+      <div class="container">
+        <div class="row align-items-center justify-content-between gy-3">
+          <div class="col-lg-7">
+            <div class="filter-bar-valera" role="group" aria-label="Filter classes by category">
+              <button type="button" class="filter-pill-btn active" data-class-filter="all">All Categories (12)</button>
+              <button type="button" class="filter-pill-btn" data-class-filter="strength">Strength &amp; Conditioning (4)</button>
+              <button type="button" class="filter-pill-btn" data-class-filter="cardio">Cardio &amp; Movement (4)</button>
+              <button type="button" class="filter-pill-btn" data-class-filter="mindbody">Mind &amp; Body (4)</button>
+            </div>
+          </div>
+
+          <div class="col-lg-5 d-flex flex-wrap align-items-center justify-content-lg-end gap-2">
+            <span class="small fw-bold text-uppercase text-secondary me-1" style="font-size: 0.72rem; letter-spacing: 0.08em;">Level:</span>
+            <button type="button" class="filter-pill-btn py-1 px-3 active" data-level-filter="all">All</button>
+            <button type="button" class="filter-pill-btn py-1 px-3" data-level-filter="Beginner">Beginner</button>
+            <button type="button" class="filter-pill-btn py-1 px-3" data-level-filter="Intermediate">Intermediate</button>
+            <button type="button" class="filter-pill-btn py-1 px-3" data-level-filter="Advanced">Advanced</button>
+            <span id="activeClassCount" class="small text-secondary ms-2 fw-semibold">Showing 12 classes</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. CATEGORY I: STRENGTH & CONDITIONING (4 CLASSES)
+         ====================================================================== -->
+    <section id="strength-section" class="section-padding" data-category-section="strength">
+      <div class="container">
+        <div class="row align-items-end justify-content-between mb-5 gy-3">
+          <div class="col-lg-7">
+            <span class="eyebrow">Category 01 &mdash; Resistance &amp; Power</span>
+            <h2 class="display-lg mb-0">Strength &amp; <span class="italic-accent">Conditioning</span></h2>
+          </div>
+          <div class="col-lg-5 text-lg-end">
+            <p class="small text-secondary mb-0">
+              Engineered to build lean muscle architecture, increase bone mineral density, and empower functional strength across every stage of womanhood.
+            </p>
+          </div>
+        </div>
+
+        <!-- 1. Strength Training -->
+        <article class="class-filter-item mb-5 p-4 p-lg-5 rounded-4 bg-editorial-surface border shadow-sm" data-category="strength" data-level="Beginner Intermediate Advanced" style="border-color: var(--border-subtle) !important;">
+          <div class="row align-items-center gy-4">
+            <div class="col-md-6">
+              <div class="rounded-4 overflow-hidden position-relative" style="aspect-ratio: 16/10;">
+                <span class="badge-overlay-top">Signature Flagship</span>
+                <img src="assets/images/woman-barbell-squat.jpg" alt="Woman performing Strength Training barbell squat" class="w-100 h-100 object-fit-cover" />
+              </div>
+            </div>
+            <div class="col-md-6 ps-md-4">
+              <div class="d-flex flex-wrap gap-2 mb-3">
+                <span class="badge-valera">Strength &amp; Conditioning</span>
+                <span class="badge-valera badge-level-beginner">Beginner / Intermediate / Advanced</span>
+                <span class="badge-valera"><i class="bi bi-clock me-1"></i> 50 Mins</span>
+              </div>
+              <h3 class="display-md mb-3">Strength Training</h3>
+              <p class="text-secondary mb-3">
+                Our foundational barbell, dumbbell, and cable resistance discipline. Structured in 12-week progressive overload blocks focusing on compound lifts—hip thrusts, deadlifts, overhead presses, and tempo squats—with meticulous biomechanical coaching.
+              </p>
+              <div class="row g-3 mb-4 small">
+                <div class="col-sm-6">
+                  <strong class="d-block text-uppercase mb-1" style="font-size: 0.72rem; letter-spacing: 0.08em; color: var(--brand-mauve);">Training Benefits</strong>
+                  <ul class="list-unstyled mb-0 text-secondary">
+                    <li><i class="bi bi-check2 me-1"></i> Builds lean muscle &amp; resting metabolism</li>
+                    <li><i class="bi bi-check2 me-1"></i> Strengthens joints &amp; bone mineral density</li>
+                    <li><i class="bi bi-check2 me-1"></i> Sculpted glute, back &amp; shoulder posture</li>
+                  </ul>
+                </div>
+                <div class="col-sm-6">
+                  <strong class="d-block text-uppercase mb-1" style="font-size: 0.72rem; letter-spacing: 0.08em; color: var(--brand-mauve);">Suitable Audience</strong>
+                  <p class="text-secondary mb-0">
+                    Women of all levels—from first-time lifters learning proper hinge form to advanced lifters pursuing strength milestones.
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex flex-wrap gap-3">
+                <a href="contact.html?program=Strength+%26+Conditioning&class=Strength+Training#enquiry-form" class="btn-valera-primary" data-enquiry-trigger data-enquiry-subject="Strength Training" data-enquiry-program="Strength & Conditioning">
+                  Join Class <i class="bi bi-arrow-up-right"></i>
+                </a>
+                <a href="#schedule-preview" class="btn-valera-outline">Check Times</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="row g-4 justify-content-center">
+          <!-- 2. Functional Fitness -->
+          <div class="col-xl-4 col-md-6 class-filter-item" data-category="strength" data-level="Beginner Intermediate">
+            <article class="editorial-card">
+              <div class="editorial-img-wrap">
+                <span class="badge-overlay-top">50 Mins</span>
+                <img src="assets/images/woman-kettlebell-squat.jpg" alt="Woman performing kettlebell Functional Fitness workout" />
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between">
+                <div>
+                  <div class="d-flex flex-wrap gap-2 mb-2">
+                    <span class="badge-valera badge-level-beginner">Beginner / Intermediate</span>
+                  </div>
+                  <h3 class="display-sm mb-2">Functional Fitness</h3>
+                  <p class="small text-secondary mb-3">
+                    Multi-planar movement patterns using kettlebells, medicine balls, sleds, and suspension straps to build real-world agility, core anti-rotation, and unilateral balance.
+                  </p>
+                  <div class="p-3 rounded-3 bg-editorial-secondary small mb-3">
+                    <div class="mb-1"><strong>Benefits:</strong> Core stability, injury prevention, everyday athletic ease.</div>
+                    <div><strong>Suitable For:</strong> Women seeking practical strength, balance &amp; joint resilience.</div>
+                  </div>
+                </div>
+                <a href="contact.html?program=Strength+%26+Conditioning&class=Functional+Fitness#enquiry-form" class="btn-valera-primary w-100" data-enquiry-trigger data-enquiry-subject="Functional Fitness" data-enquiry-program="Strength & Conditioning">
+                  Join Class <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- 3. Full Body Conditioning -->
+          <div class="col-xl-4 col-md-6 class-filter-item" data-category="strength" data-level="Intermediate Advanced">
+            <article class="editorial-card">
+              <div class="editorial-img-wrap">
+                <span class="badge-overlay-top">50 Mins</span>
+                <img src="assets/images/woman-barbell-press.jpg" alt="Woman doing Full Body Conditioning overhead barbell press" />
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between">
+                <div>
+                  <div class="d-flex flex-wrap gap-2 mb-2">
+                    <span class="badge-valera badge-level-intermediate">Intermediate / Advanced</span>
+                  </div>
+                  <h3 class="display-sm mb-2">Full Body Conditioning</h3>
+                  <p class="small text-secondary mb-3">
+                    High-density resistance supersets pairing upper- and lower-body compound movements with athletic core finishers for total-body muscular endurance and sculpting.
+                  </p>
+                  <div class="p-3 rounded-3 bg-editorial-secondary small mb-3">
+                    <div class="mb-1"><strong>Benefits:</strong> Muscular stamina, full-body tone, work capacity.</div>
+                    <div><strong>Suitable For:</strong> Members comfortable with foundational lifts seeking an athletic challenge.</div>
+                  </div>
+                </div>
+                <a href="contact.html?program=Strength+%26+Conditioning&class=Full+Body+Conditioning#enquiry-form" class="btn-valera-primary w-100" data-enquiry-trigger data-enquiry-subject="Full Body Conditioning" data-enquiry-program="Strength & Conditioning">
+                  Join Class <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- 4. Personal Training -->
+          <div class="col-xl-4 col-md-6 class-filter-item" data-category="strength" data-level="Beginner Intermediate Advanced">
+            <article class="editorial-card">
+              <div class="editorial-img-wrap">
+                <span class="badge-overlay-top">55 Mins &bull; 1-on-1</span>
+                <img src="assets/images/personal-trainer-guide.jpg" alt="1-on-1 Personal Training session with female coach" />
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between">
+                <div>
+                  <div class="d-flex flex-wrap gap-2 mb-2">
+                    <span class="badge-valera badge-level-beginner">All Levels &bull; Bespoke</span>
+                  </div>
+                  <h3 class="display-sm mb-2">Personal Training</h3>
+                  <p class="small text-secondary mb-3">
+                    Fully customized 1-on-1 or duet coaching tailored to your anatomy, schedule, prenatal/postnatal chapter, or specific body recomposition and strength goals.
+                  </p>
+                  <div class="p-3 rounded-3 bg-editorial-secondary small mb-3">
+                    <div class="mb-1"><strong>Benefits:</strong> Individualized programming, biometric tracking, rapid mastery.</div>
+                    <div><strong>Suitable For:</strong> Beginners wanting private guidance, pre/postnatal women &amp; busy executives.</div>
+                  </div>
+                </div>
+                <a href="contact.html?program=Personal+Training&class=Personal+Training#enquiry-form" class="btn-valera-primary w-100" data-enquiry-trigger data-enquiry-subject="1-on-1 Personal Training" data-enquiry-program="Personal Training">
+                  Join Class <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. CATEGORY II: CARDIO & MOVEMENT (4 CLASSES)
+         ====================================================================== -->
+    <section id="cardio-section" class="section-padding bg-editorial-secondary" data-category-section="cardio">
+      <div class="container">
+        <div class="row align-items-end justify-content-between mb-5 gy-3">
+          <div class="col-lg-7">
+            <span class="eyebrow">Category 02 &mdash; Stamina &amp; Rhythm</span>
+            <h2 class="display-lg mb-0">Cardio &amp; <span class="italic-accent">Movement</span></h2>
+          </div>
+          <div class="col-lg-5 text-lg-end">
+            <p class="small text-secondary mb-0">
+              High-energy, music-driven sessions that elevate heart health, VO2 max, and athletic coordination without punishing your joints.
+            </p>
+          </div>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <!-- 5. HIIT Workouts -->
+          <div class="col-md-6 class-filter-item" data-category="cardio" data-level="Intermediate Advanced">
+            <article class="editorial-card flex-xl-row">
+              <div class="col-xl-5 editorial-img-wrap aspect-portrait">
+                <span class="badge-overlay-top">45 Mins</span>
+                <img src="assets/images/woman-two-dumbbells.jpg" alt="Woman doing HIIT Workouts with dumbbells" />
+              </div>
+              <div class="col-xl-7 p-4 d-flex flex-column justify-content-between">
+                <div>
+                  <span class="badge-valera badge-level-intermediate mb-2">Intermediate / Advanced</span>
+                  <h3 class="display-sm mb-2">HIIT Workouts</h3>
+                  <p class="small text-secondary mb-3">
+                    Scientifically timed work-to-recovery intervals combining sprint mechanics, battle ropes, and explosive power with low-impact modifications always available.
+                  </p>
+                  <ul class="list-unstyled small text-secondary mb-3">
+                    <li><strong class="text-primary">Benefits:</strong> Peak caloric afterburn, VO2 max &amp; anaerobic power.</li>
+                    <li><strong class="text-primary">Audience:</strong> Women who love fast-paced athletic intervals.</li>
+                  </ul>
+                </div>
+                <a href="contact.html?program=Cardio+%26+Movement&class=HIIT+Workouts#enquiry-form" class="btn-valera-primary w-100" data-enquiry-trigger data-enquiry-subject="HIIT Workouts" data-enquiry-program="Cardio & Movement">
+                  Join Class <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- 6. Dance Fitness -->
+          <div class="col-md-6 class-filter-item" data-category="cardio" data-level="Beginner Intermediate">
+            <article class="editorial-card flex-xl-row">
+              <div class="col-xl-5 editorial-img-wrap aspect-portrait">
+                <span class="badge-overlay-top">50 Mins</span>
+                <img src="assets/images/women-dance-fitness.jpg" alt="Women enjoying Dance Fitness cardio group session" />
+              </div>
+              <div class="col-xl-7 p-4 d-flex flex-column justify-content-between">
+                <div>
+                  <span class="badge-valera badge-level-beginner mb-2">Beginner / Intermediate</span>
+                  <h3 class="display-sm mb-2">Dance Fitness</h3>
+                  <p class="small text-secondary mb-3">
+                    Choreographed rhythm cardio blended with light ankle- and hand-weight sculpting. An exhilarating, endorphin-soaked session that feels like a private club celebration.
+                  </p>
+                  <ul class="list-unstyled small text-secondary mb-3">
+                    <li><strong class="text-primary">Benefits:</strong> Coordination, joyful stress release, sculpted endurance.</li>
+                    <li><strong class="text-primary">Audience:</strong> All levels—no prior dance background required.</li>
+                  </ul>
+                </div>
+                <a href="contact.html?program=Cardio+%26+Movement&class=Dance+Fitness#enquiry-form" class="btn-valera-primary w-100" data-enquiry-trigger data-enquiry-subject="Dance Fitness" data-enquiry-program="Cardio & Movement">
+                  Join Class <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- 7. Indoor Cycling -->
+          <div class="col-md-6 class-filter-item" data-category="cardio" data-level="Beginner Intermediate Advanced">
+            <article class="editorial-card flex-xl-row">
+              <div class="col-xl-5 editorial-img-wrap aspect-portrait">
+                <span class="badge-overlay-top">45 Mins</span>
+                <img src="assets/images/women-indoor-cycling.jpg" alt="Women in Indoor Cycling rhythm spin class" />
+              </div>
+              <div class="col-xl-7 p-4 d-flex flex-column justify-content-between">
+                <div>
+                  <span class="badge-valera badge-level-beginner mb-2">All Levels (Self-Paced Resistance)</span>
+                  <h3 class="display-sm mb-2">Indoor Cycling</h3>
+                  <p class="small text-secondary mb-3">
+                    Held in our candlelit acoustic cycle amphitheater. Ride to curated house and soulful playlists through heavy hill climbs, rhythm sprints, and wattage intervals.
+                  </p>
+                  <ul class="list-unstyled small text-secondary mb-3">
+                    <li><strong class="text-primary">Benefits:</strong> Zero-impact lower-body stamina &amp; cardiovascular output.</li>
+                    <li><strong class="text-primary">Audience:</strong> Beginners to avid cyclists seeking a high-energy ride.</li>
+                  </ul>
+                </div>
+                <a href="contact.html?program=Cardio+%26+Movement&class=Indoor+Cycling#enquiry-form" class="btn-valera-primary w-100" data-enquiry-trigger data-enquiry-subject="Indoor Cycling" data-enquiry-program="Cardio & Movement">
+                  Join Class <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- 8. Cardio Training -->
+          <div class="col-md-6 class-filter-item" data-category="cardio" data-level="Beginner Intermediate">
+            <article class="editorial-card flex-xl-row">
+              <div class="col-xl-5 editorial-img-wrap aspect-portrait">
+                <span class="badge-overlay-top">45 Mins</span>
+                <img src="assets/images/woman-treadmill-cardio.jpg" alt="Woman running on treadmill during Cardio Training" />
+              </div>
+              <div class="col-xl-7 p-4 d-flex flex-column justify-content-between">
+                <div>
+                  <span class="badge-valera badge-level-beginner mb-2">Beginner / Intermediate</span>
+                  <h3 class="display-sm mb-2">Cardio Training</h3>
+                  <p class="small text-secondary mb-3">
+                    Zone-2 and Zone-3 aerobic endurance circuits utilizing curved non-motorized treadmills, rowers, and bodyweight flow to build sustainable heart health and daily energy.
+                  </p>
+                  <ul class="list-unstyled small text-secondary mb-3">
+                    <li><strong class="text-primary">Benefits:</strong> Aerobic base, mitochondrial vitality, fat oxidation.</li>
+                    <li><strong class="text-primary">Audience:</strong> Women building foundational stamina without burnout.</li>
+                  </ul>
+                </div>
+                <a href="contact.html?program=Cardio+%26+Movement&class=Cardio+Training#enquiry-form" class="btn-valera-primary w-100" data-enquiry-trigger data-enquiry-subject="Cardio Training" data-enquiry-program="Cardio & Movement">
+                  Join Class <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. CATEGORY III: MIND & BODY (4 CLASSES)
+         ====================================================================== -->
+    <section id="mindbody-section" class="section-padding" data-category-section="mindbody">
+      <div class="container">
+        <div class="row align-items-end justify-content-between mb-5 gy-3">
+          <div class="col-lg-7">
+            <span class="eyebrow">Category 03 &mdash; Alignment &amp; Restoration</span>
+            <h2 class="display-lg mb-0">Mind &amp; <span class="italic-accent">Body</span></h2>
+          </div>
+          <div class="col-lg-5 text-lg-end">
+            <p class="small text-secondary mb-0">
+              Precision core lengthening, breath-synchronized flow, and parasympathetic recovery to keep your body supple and resilient.
+            </p>
+          </div>
+        </div>
+
+        <!-- 10. Pilates -->
+        <article class="class-filter-item mb-5 p-4 p-lg-5 rounded-4 bg-editorial-surface border shadow-sm" data-category="mindbody" data-level="Beginner Intermediate Advanced" style="border-color: var(--border-subtle) !important;">
+          <div class="row align-items-center gy-4">
+            <div class="col-md-6 order-md-2">
+              <div class="rounded-4 overflow-hidden position-relative" style="aspect-ratio: 16/10;">
+                <span class="badge-overlay-top">Atelier Bestseller</span>
+                <img src="assets/images/pilates-reformer-class.jpg" alt="Women practicing Reformer Pilates class at Valéra" class="w-100 h-100 object-fit-cover" />
+              </div>
+            </div>
+            <div class="col-md-6 order-md-1 pe-md-4">
+              <div class="d-flex flex-wrap gap-2 mb-3">
+                <span class="badge-valera">Mind &amp; Body</span>
+                <span class="badge-valera badge-level-beginner">Beginner / Intermediate / Advanced</span>
+                <span class="badge-valera"><i class="bi bi-clock me-1"></i> 45 Mins</span>
+              </div>
+              <h3 class="display-md mb-3">Pilates (Reformer &amp; Sculpt Mat)</h3>
+              <p class="text-secondary mb-3">
+                Contemporary athletic Reformer and heated Mat Pilates focusing on eccentric control, pelvic floor synergy, oblique sculpting, and spinal articulation. Experience the signature Valéra slow-burn shake.
+              </p>
+              <div class="row g-3 mb-4 small">
+                <div class="col-sm-6">
+                  <strong class="d-block text-uppercase mb-1" style="font-size: 0.72rem; letter-spacing: 0.08em; color: var(--brand-mauve);">Training Benefits</strong>
+                  <ul class="list-unstyled mb-0 text-secondary">
+                    <li><i class="bi bi-check2 me-1"></i> Deep core &amp; pelvic floor strength</li>
+                    <li><i class="bi bi-check2 me-1"></i> Long, decompressed spinal posture</li>
+                    <li><i class="bi bi-check2 me-1"></i> Zero-impact stabilizer toning</li>
+                  </ul>
+                </div>
+                <div class="col-sm-6">
+                  <strong class="d-block text-uppercase mb-1" style="font-size: 0.72rem; letter-spacing: 0.08em; color: var(--brand-mauve);">Suitable Audience</strong>
+                  <p class="text-secondary mb-0">
+                    Ideal for all women—including beginners, post-natal mothers, and strength athletes seeking core precision.
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex flex-wrap gap-3">
+                <a href="contact.html?program=Mind+%26+Body&class=Pilates#enquiry-form" class="btn-valera-primary" data-enquiry-trigger data-enquiry-subject="Pilates (Reformer & Mat)" data-enquiry-program="Mind & Body">
+                  Join Class <i class="bi bi-arrow-up-right"></i>
+                </a>
+                <a href="#schedule-preview" class="btn-valera-outline">Check Times</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="row g-4 justify-content-center">
+          <!-- 9. Yoga -->
+          <div class="col-xl-4 col-md-6 class-filter-item" data-category="mindbody" data-level="Beginner Intermediate">
+            <article class="editorial-card">
+              <div class="editorial-img-wrap">
+                <span class="badge-overlay-top">55 Mins</span>
+                <img src="assets/images/women-yoga-group.jpg" alt="Women practicing group Yoga flow in bright studio" />
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between">
+                <div>
+                  <div class="d-flex flex-wrap gap-2 mb-2">
+                    <span class="badge-valera badge-level-beginner">Beginner / Intermediate</span>
+                  </div>
+                  <h3 class="display-sm mb-2">Yoga</h3>
+                  <p class="small text-secondary mb-3">
+                    Breath-led dynamic Vinyasa and warm Yin flows in our softly lit sanctuary. Cultivate isometric balance, mental stillness, and fluid upper- and lower-body flexibility.
+                  </p>
+                  <div class="p-3 rounded-3 bg-editorial-secondary small mb-3">
+                    <div class="mb-1"><strong>Benefits:</strong> Mind-body grounding, joint flexibility, breath mastery.</div>
+                    <div><strong>Suitable For:</strong> All women seeking mindful movement and stress relief.</div>
+                  </div>
+                </div>
+                <a href="contact.html?program=Mind+%26+Body&class=Yoga#enquiry-form" class="btn-valera-primary w-100" data-enquiry-trigger data-enquiry-subject="Yoga" data-enquiry-program="Mind & Body">
+                  Join Class <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- 11. Stretching and Mobility -->
+          <div class="col-xl-4 col-md-6 class-filter-item" data-category="mindbody" data-level="Beginner Intermediate Advanced">
+            <article class="editorial-card">
+              <div class="editorial-img-wrap">
+                <span class="badge-overlay-top">45 Mins</span>
+                <img src="assets/images/woman-leg-stretch.jpg" alt="Woman performing Stretching and Mobility routine" />
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between">
+                <div>
+                  <div class="d-flex flex-wrap gap-2 mb-2">
+                    <span class="badge-valera badge-level-beginner">All Levels</span>
+                  </div>
+                  <h3 class="display-sm mb-2">Stretching and Mobility</h3>
+                  <p class="small text-secondary mb-3">
+                    Functional Range Conditioning (FRC) and end-range joint articulation targeting tight hip flexors, hamstrings, thoracic spine, and desk-bound shoulders.
+                  </p>
+                  <div class="p-3 rounded-3 bg-editorial-secondary small mb-3">
+                    <div class="mb-1"><strong>Benefits:</strong> Deeper squat/hinge range, joint longevity, tension relief.</div>
+                    <div><strong>Suitable For:</strong> Lifters, runners, and professionals sitting long hours.</div>
+                  </div>
+                </div>
+                <a href="contact.html?program=Mind+%26+Body&class=Stretching+and+Mobility#enquiry-form" class="btn-valera-primary w-100" data-enquiry-trigger data-enquiry-subject="Stretching and Mobility" data-enquiry-program="Mind & Body">
+                  Join Class <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- 12. Recovery Sessions -->
+          <div class="col-xl-4 col-md-6 class-filter-item" data-category="mindbody" data-level="Beginner">
+            <article class="editorial-card">
+              <div class="editorial-img-wrap">
+                <span class="badge-overlay-top">50 Mins</span>
+                <img src="assets/images/woman-recovery-mat.jpg" alt="Woman relaxing on yoga mat during Recovery Session" />
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between">
+                <div>
+                  <div class="d-flex flex-wrap gap-2 mb-2">
+                    <span class="badge-valera badge-level-beginner">All Levels &bull; Restorative</span>
+                  </div>
+                  <h3 class="display-sm mb-2">Recovery Sessions</h3>
+                  <p class="small text-secondary mb-3">
+                    Guided myofascial trigger-point release, infrared warmth, somatic vagus-nerve breathwork, and acoustic sound bath rest to accelerate muscular repair.
+                  </p>
+                  <div class="p-3 rounded-3 bg-editorial-secondary small mb-3">
+                    <div class="mb-1"><strong>Benefits:</strong> Cortisol reduction, lymphatic flow, deep sleep quality.</div>
+                    <div><strong>Suitable For:</strong> Every woman looking to recharge her nervous system.</div>
+                  </div>
+                </div>
+                <a href="contact.html?program=Mind+%26+Body&class=Recovery+Sessions#enquiry-form" class="btn-valera-primary w-100" data-enquiry-trigger data-enquiry-subject="Recovery Sessions" data-enquiry-program="Mind & Body">
+                  Join Class <i class="bi bi-arrow-up-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. WEEKLY CLASS SCHEDULE PREVIEW (EDITABLE SAMPLE DATA)
+         ====================================================================== -->
+    <section id="schedule-preview" class="section-padding bg-editorial-secondary">
+      <div class="container">
+        <div class="row align-items-end justify-content-between mb-4 gy-3">
+          <div class="col-lg-6">
+            <span class="eyebrow">Studio Timetable</span>
+            <h2 class="display-lg mb-0">Weekly <span class="italic-accent">Schedule</span> Preview</h2>
+          </div>
+          <div class="col-lg-6">
+            <div class="filter-bar-valera justify-content-lg-end" role="group" aria-label="Filter schedule by day">
+              <button type="button" class="filter-pill-btn active" data-schedule-day="all">Full Week</button>
+              <button type="button" class="filter-pill-btn" data-schedule-day="Mon">Mon</button>
+              <button type="button" class="filter-pill-btn" data-schedule-day="Tue">Tue</button>
+              <button type="button" class="filter-pill-btn" data-schedule-day="Wed">Wed</button>
+              <button type="button" class="filter-pill-btn" data-schedule-day="Thu">Thu</button>
+              <button type="button" class="filter-pill-btn" data-schedule-day="Fri">Fri</button>
+              <button type="button" class="filter-pill-btn" data-schedule-day="Sat">Weekend</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-table-wrapper">
+          <table class="table-valera-schedule" aria-label="Weekly Studio Class Schedule">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Class Name</th>
+                <th>Category</th>
+                <th>Days Offered</th>
+                <th>Duration</th>
+                <th>Level</th>
+                <th>Lead Coach</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-day-row="Mon Wed Fri">
+                <td class="fw-bold text-primary">06:30 AM</td>
+                <td class="fw-bold text-primary">Strength Training</td>
+                <td><span class="badge-valera">Strength</span></td>
+                <td>Mon, Wed, Fri</td>
+                <td>50 Mins</td>
+                <td>All Levels</td>
+                <td>Elena Rostova</td>
+                <td>
+                  <a href="contact.html?program=Strength+%26+Conditioning&class=Strength+Training#enquiry-form" class="link-editorial" data-enquiry-trigger data-enquiry-subject="Strength Training (06:30 AM)" data-enquiry-program="Strength & Conditioning">Reserve</a>
+                </td>
+              </tr>
+              <tr data-day-row="Mon Tue Thu Fri">
+                <td class="fw-bold text-primary">07:30 AM</td>
+                <td class="fw-bold text-primary">Pilates (Reformer Sculpt)</td>
+                <td><span class="badge-valera">Mind &amp; Body</span></td>
+                <td>Mon, Tue, Thu, Fri</td>
+                <td>45 Mins</td>
+                <td>Beginner / Int</td>
+                <td>Camille Laurent</td>
+                <td>
+                  <a href="contact.html?program=Mind+%26+Body&class=Pilates#enquiry-form" class="link-editorial" data-enquiry-trigger data-enquiry-subject="Pilates Reformer Sculpt (07:30 AM)" data-enquiry-program="Mind & Body">Reserve</a>
+                </td>
+              </tr>
+              <tr data-day-row="Tue Thu Sat">
+                <td class="fw-bold text-primary">08:30 AM</td>
+                <td class="fw-bold text-primary">HIIT Workouts</td>
+                <td><span class="badge-valera">Cardio</span></td>
+                <td>Tue, Thu, Sat</td>
+                <td>45 Mins</td>
+                <td>Intermediate</td>
+                <td>Maya Lin</td>
+                <td>
+                  <a href="contact.html?program=Cardio+%26+Movement&class=HIIT+Workouts#enquiry-form" class="link-editorial" data-enquiry-trigger data-enquiry-subject="HIIT Workouts (08:30 AM)" data-enquiry-program="Cardio & Movement">Reserve</a>
+                </td>
+              </tr>
+              <tr data-day-row="Mon Wed Sat">
+                <td class="fw-bold text-primary">09:30 AM</td>
+                <td class="fw-bold text-primary">Functional Fitness</td>
+                <td><span class="badge-valera">Strength</span></td>
+                <td>Mon, Wed, Sat</td>
+                <td>50 Mins</td>
+                <td>Beginner / Int</td>
+                <td>Naomi Sterling</td>
+                <td>
+                  <a href="contact.html?program=Strength+%26+Conditioning&class=Functional+Fitness#enquiry-form" class="link-editorial" data-enquiry-trigger data-enquiry-subject="Functional Fitness (09:30 AM)" data-enquiry-program="Strength & Conditioning">Reserve</a>
+                </td>
+              </tr>
+              <tr data-day-row="Tue Thu">
+                <td class="fw-bold text-primary">12:00 PM</td>
+                <td class="fw-bold text-primary">Full Body Conditioning</td>
+                <td><span class="badge-valera">Strength</span></td>
+                <td>Tue, Thu</td>
+                <td>50 Mins</td>
+                <td>Int / Advanced</td>
+                <td>Elena Rostova</td>
+                <td>
+                  <a href="contact.html?program=Strength+%26+Conditioning&class=Full+Body+Conditioning#enquiry-form" class="link-editorial" data-enquiry-trigger data-enquiry-subject="Full Body Conditioning (12:00 PM)" data-enquiry-program="Strength & Conditioning">Reserve</a>
+                </td>
+              </tr>
+              <tr data-day-row="Mon Wed Fri">
+                <td class="fw-bold text-primary">12:30 PM</td>
+                <td class="fw-bold text-primary">Stretching and Mobility</td>
+                <td><span class="badge-valera">Mind &amp; Body</span></td>
+                <td>Mon, Wed, Fri</td>
+                <td>45 Mins</td>
+                <td>All Levels</td>
+                <td>Aria Vance</td>
+                <td>
+                  <a href="contact.html?program=Mind+%26+Body&class=Stretching+and+Mobility#enquiry-form" class="link-editorial" data-enquiry-trigger data-enquiry-subject="Stretching and Mobility (12:30 PM)" data-enquiry-program="Mind & Body">Reserve</a>
+                </td>
+              </tr>
+              <tr data-day-row="Mon Wed Fri Sat">
+                <td class="fw-bold text-primary">05:00 PM</td>
+                <td class="fw-bold text-primary">Indoor Cycling</td>
+                <td><span class="badge-valera">Cardio</span></td>
+                <td>Mon, Wed, Fri, Sat</td>
+                <td>45 Mins</td>
+                <td>All Levels</td>
+                <td>Zara Al-Mansoor</td>
+                <td>
+                  <a href="contact.html?program=Cardio+%26+Movement&class=Indoor+Cycling#enquiry-form" class="link-editorial" data-enquiry-trigger data-enquiry-subject="Indoor Cycling (05:00 PM)" data-enquiry-program="Cardio & Movement">Reserve</a>
+                </td>
+              </tr>
+              <tr data-day-row="Tue Thu Sat">
+                <td class="fw-bold text-primary">06:00 PM</td>
+                <td class="fw-bold text-primary">Dance Fitness</td>
+                <td><span class="badge-valera">Cardio</span></td>
+                <td>Tue, Thu, Sat</td>
+                <td>50 Mins</td>
+                <td>Beginner / Int</td>
+                <td>Zara Al-Mansoor</td>
+                <td>
+                  <a href="contact.html?program=Cardio+%26+Movement&class=Dance+Fitness#enquiry-form" class="link-editorial" data-enquiry-trigger data-enquiry-subject="Dance Fitness (06:00 PM)" data-enquiry-program="Cardio & Movement">Reserve</a>
+                </td>
+              </tr>
+              <tr data-day-row="Mon Tue Wed Thu">
+                <td class="fw-bold text-primary">06:30 PM</td>
+                <td class="fw-bold text-primary">Cardio Training</td>
+                <td><span class="badge-valera">Cardio</span></td>
+                <td>Mon, Tue, Wed, Thu</td>
+                <td>45 Mins</td>
+                <td>Beginner / Int</td>
+                <td>Maya Lin</td>
+                <td>
+                  <a href="contact.html?program=Cardio+%26+Movement&class=Cardio+Training#enquiry-form" class="link-editorial" data-enquiry-trigger data-enquiry-subject="Cardio Training (06:30 PM)" data-enquiry-program="Cardio & Movement">Reserve</a>
+                </td>
+              </tr>
+              <tr data-day-row="Mon Wed Fri Sat">
+                <td class="fw-bold text-primary">07:15 PM</td>
+                <td class="fw-bold text-primary">Yoga &amp; Recovery Sessions</td>
+                <td><span class="badge-valera">Mind &amp; Body</span></td>
+                <td>Mon, Wed, Fri, Sun</td>
+                <td>55 Mins</td>
+                <td>All Levels</td>
+                <td>Aria Vance</td>
+                <td>
+                  <a href="contact.html?program=Mind+%26+Body&class=Yoga#enquiry-form" class="link-editorial" data-enquiry-trigger data-enquiry-subject="Yoga & Recovery Sessions (07:15 PM)" data-enquiry-program="Mind & Body">Reserve</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         7. FINAL CTA BANNER
+         ====================================================================== -->
+    <section class="section-padding-sm bg-editorial-plum">
+      <div class="container">
+        <div class="row align-items-center justify-content-between gy-4">
+          <div class="col-lg-7">
+            <span class="eyebrow eyebrow-light">Unsure Where to Start?</span>
+            <h2 class="display-lg mb-2">Let Our Coaches Design Your <span class="italic-accent" style="color: var(--accent-champagne);">Ideal</span> Weekly Split.</h2>
+            <p class="mb-0" style="color: #E0D6D9;">
+              Book a complimentary 15-minute curriculum call or visit the studio for a guided tour.
+            </p>
+          </div>
+          <div class="col-lg-5 text-lg-end">
+            <a href="contact.html#enquiry-form" class="btn-valera-coral">
+              Enquire About Classes <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       INTERACTIVE QUICK CLASS ENQUIRY MODAL
+       ======================================================================== -->
+  <div class="modal fade" id="valeraEnquiryModal" tabindex="-1" aria-labelledby="valeraEnquiryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-content-valera p-3 p-sm-4">
+        <div class="modal-header border-0 pb-0">
+          <div>
+            <span class="eyebrow mb-1">Studio Class Concierge</span>
+            <h3 class="h3 display-font mb-0" id="valeraEnquiryModalLabel">Enquire: <span id="modalEnquiryTarget" class="italic-accent">Strength Training</span></h3>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body pt-3">
+          <form id="modalEnquiryForm" novalidate>
+            <div class="mb-3">
+              <label for="modalFullName" class="form-label-valera">Full Name *</label>
+              <input type="text" id="modalFullName" class="form-control-valera" placeholder="e.g., Clara Vance" required />
+              <div class="invalid-feedback-valera">Please enter your full name.</div>
+            </div>
+            <div class="mb-3">
+              <label for="modalEmail" class="form-label-valera">Email Address *</label>
+              <input type="email" id="modalEmail" class="form-control-valera" placeholder="clara@example.com" required />
+              <div class="invalid-feedback-valera">Please enter a valid email address.</div>
+            </div>
+            <div class="mb-3">
+              <label for="modalPhone" class="form-label-valera">Phone / WhatsApp *</label>
+              <input type="tel" id="modalPhone" class="form-control-valera" placeholder="+1 (555) 234-5678" required />
+              <div class="invalid-feedback-valera">Please enter your phone number.</div>
+            </div>
+            <div class="row g-3 mb-3">
+              <div class="col-sm-6">
+                <label for="modalProgramSelect" class="form-label-valera">Program Category</label>
+                <select id="modalProgramSelect" class="form-select-valera">
+                  <option value="Strength & Conditioning">Strength &amp; Conditioning</option>
+                  <option value="Cardio & Movement">Cardio &amp; Movement</option>
+                  <option value="Mind & Body">Mind &amp; Body</option>
+                  <option value="Personal Training">Personal Training</option>
+                </select>
+              </div>
+              <div class="col-sm-6">
+                <label for="modalLevelSelect" class="form-label-valera">Experience Level</label>
+                <select id="modalLevelSelect" class="form-select-valera">
+                  <option value="Beginner">Beginner</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Advanced">Advanced</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn-valera-primary w-100">
+              Submit Class Enquiry <i class="bi bi-arrow-right"></i>
+            </button>
+            <p class="small text-secondary text-center mt-2 mb-0">
+              Already a member? <a href="dashboard.html" class="fw-bold text-decoration-underline">Book directly in Dashboard</a>
+            </p>
+          </form>
+
+          <div id="modalEnquirySuccess" class="d-none p-4 rounded-4 bg-editorial-secondary text-center">
+            <i class="bi bi-check-circle-fill fs-1 mb-2 d-block" style="color: var(--brand-mauve);"></i>
+            <h4 class="display-font h3 mb-2">Class Enquiry Received</h4>
+            <p class="small text-secondary mb-3">
+              Thank you! This is a frontend template preview—our studio concierge team would respond within 2 business hours with available session times and trial pass options.
+            </p>
+            <button type="button" class="btn-valera-outline" data-bs-dismiss="modal">Close Window</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       PROFESSIONAL MULTI-COLUMN FOOTER (WHITE IN LIGHT MODE)
+       ======================================================================== -->
+  <footer class="valera-footer" role="contentinfo">
+    <div class="container">
+      <div class="row gy-5 pb-5 footer-top-divider">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="navbar-brand-valera mb-3">
+            <span class="brand-icon-mark" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 18L32 48L48 18" stroke="#FAF7F2" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M24 18L32 33L40 18" stroke="#C8A273" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="32" cy="13" r="3.5" fill="#D46F58"/>
+              </svg>
+            </span>
+            <span class="brand-text-stack">
+              <span class="brand-title">VALÉRA</span>
+              <span class="brand-subtitle">Strength &amp; Wellness Atelier</span>
+            </span>
+          </a>
+          <p class="small mb-4 footer-muted-text" style="max-width: 340px;">
+            An architectural women's fitness sanctuary uniting progressive strength training, athletic Reformer Pilates, and holistic recovery under master female coaching.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-circle-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-circle-link" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-circle-link" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-circle-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home 1 — Sanctuary</a></li>
+            <li><a href="home-2.html">Home 2 — Atelier</a></li>
+            <li><a href="about.html">About Valéra</a></li>
+            <li><a href="classes.html">All Classes</a></li>
+            <li><a href="trainers.html">Our Trainers</a></li>
+            <li><a href="contact.html">Contact &amp; Enquiry</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-6">
+          <h4>Disciplines &amp; Member</h4>
+          <ul class="footer-links">
+            <li><a href="#strength-section">Strength &amp; Conditioning</a></li>
+            <li><a href="#cardio-section">HIIT &amp; Indoor Cycling</a></li>
+            <li><a href="#mindbody-section">Reformer &amp; Mat Pilates</a></li>
+            <li><a href="dashboard.html">Member Dashboard</a></li>
+            <li><a href="login.html">Member Login</a></li>
+            <li><a href="signup.html">Create Account</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4>Studio Sanctuary</h4>
+          <p class="small mb-2 footer-muted-text">
+            <i class="bi bi-geo-alt me-2" style="color: var(--brand-mauve);"></i> 480 Mercer Street, Suite 3B, SoHo, NY 10013
+          </p>
+          <p class="small mb-3 footer-muted-text">
+            <i class="bi bi-clock me-2" style="color: var(--brand-mauve);"></i> Mon–Fri: 6:00 AM – 8:30 PM<br />
+            <span class="ms-4">Sat–Sun: 7:30 AM – 5:00 PM</span>
+          </p>
+          <form class="valera-newsletter-form mt-3" novalidate>
+            <label for="footerEmail3" class="small text-uppercase tracking-wider d-block mb-2 fw-bold" style="font-size: 0.7rem; letter-spacing: 0.1em;">Subscribe to The Valéra Journal</label>
+            <div class="d-flex gap-2">
+              <input type="email" id="footerEmail3" class="form-control-valera py-2 px-3 small" placeholder="Your email address" required />
+              <button type="submit" class="btn-valera-coral py-2 px-3" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+            </div>
+            <div class="newsletter-feedback small mt-2 d-none" style="color: var(--brand-mauve);"></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="pt-4 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 small footer-bottom-bar">
+        <div>&copy; 2026 VALÉRA Strength &amp; Wellness Atelier. All rights reserved.</div>
+        <div class="d-flex gap-4">
+          <a href="about.html" class="text-reset">Studio Etiquette</a>
+          <a href="contact.html" class="text-reset">Membership Terms</a>
+          <a href="signup.html" class="text-reset">Join Studio</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button type="button" class="back-to-top-btn" id="valeraBackToTop" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Member Dashboard | VALÉRA Strength &amp; Wellness Atelier</title>
+  <meta name="description" content="Valéra Member Dashboard for booking studio classes, viewing personalized workout and diet plans, and renewing your studio membership." />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+
+  <!-- Prevent Flash of Unstyled Theme & Direction -->
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('valera_theme_preference') || 'light';
+        var dir = localStorage.getItem('valera_dir_preference') || 'ltr';
+        document.documentElement.setAttribute('data-theme', saved);
+        document.documentElement.setAttribute('dir', dir);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5.3 CSS & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- Custom Design System Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="dashboard-page">
+
+  <div class="dashboard-backdrop" id="dashBackdrop"></div>
+
+  <div class="dashboard-shell">
+    <!-- ======================================================================
+         FULL-HEIGHT LEFT SIDE MENU (TOP TO BOTTOM WITH LOGOUT BUTTON)
+         ====================================================================== -->
+    <aside class="dashboard-sidebar" id="dashSidebar" aria-label="Member Dashboard Menu">
+      <div>
+        <!-- Sidebar Top Brand + Mobile Close -->
+        <div class="d-flex align-items-center justify-content-between mb-4 pb-3 border-bottom" style="border-color: var(--border-subtle) !important;">
+          <a href="index.html" class="navbar-brand-valera" aria-label="Valéra Home">
+            <span class="brand-icon-mark" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 18L32 48L48 18" stroke="#FAF7F2" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M24 18L32 33L40 18" stroke="#C8A273" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="32" cy="13" r="3.5" fill="#D46F58"/>
+              </svg>
+            </span>
+            <span class="brand-text-stack">
+              <span class="brand-title" style="font-size: 1.45rem;">VALÉRA</span>
+              <span class="brand-subtitle">Member Sanctuary</span>
+            </span>
+          </a>
+          <button type="button" class="btn-close d-xl-none" id="dashMobileClose" aria-label="Close menu"></button>
+        </div>
+
+        <!-- Sidebar Member Pill -->
+        <div class="p-3 rounded-3 bg-editorial-secondary mb-4 d-flex align-items-center gap-3">
+          <img src="assets/images/woman-trainer-portrait.jpg" alt="Sophia Chen" class="rounded-circle object-fit-cover" width="44" height="44" />
+          <div class="min-w-0">
+            <strong class="d-block small text-truncate">Sophia M. Chen</strong>
+            <span class="d-block" style="font-size: 0.72rem; color: var(--brand-mauve); font-weight: 600;">Atelier All-Access</span>
+          </div>
+        </div>
+
+        <!-- Sidebar Navigation -->
+        <ul class="dash-nav-list">
+          <li>
+            <button type="button" class="dash-nav-btn active" data-dash-section="overview">
+              <i class="bi bi-grid-1x2-fill"></i>
+              <span>Member Overview</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dash-nav-btn" data-dash-section="book">
+              <i class="bi bi-calendar2-check-fill"></i>
+              <span>Book Classes</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dash-nav-btn" data-dash-section="workout">
+              <i class="bi bi-lightning-charge-fill"></i>
+              <span>Workout Plan</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dash-nav-btn" data-dash-section="diet">
+              <i class="bi bi-cup-straw"></i>
+              <span>Diet &amp; Nutrition Plan</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dash-nav-btn" data-dash-section="membership">
+              <i class="bi bi-credit-card-2-front-fill"></i>
+              <span>Renew Membership</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Bottom Logout Button -->
+      <div class="pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+        <a href="login.html" class="dash-logout-btn">
+          <i class="bi bi-box-arrow-left"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- ======================================================================
+         MAIN DASHBOARD WORKSPACE
+         ====================================================================== -->
+    <div class="dashboard-main">
+      <!-- Top Bar -->
+      <header class="dashboard-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button type="button" class="valera-hamburger d-inline-flex d-xl-none" id="dashMobileOpen" aria-label="Open dashboard menu">
+            <i class="bi bi-list fs-4"></i>
+          </button>
+          <div>
+            <span class="small text-secondary d-block" style="font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;">Member Portal</span>
+            <h1 class="h4 display-font mb-0">Good Afternoon, Sophia</h1>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <button type="button" class="theme-toggle-btn rtl-toggle-btn" data-rtl-toggle aria-label="Toggle RTL direction" aria-pressed="false">RTL</button>
+          <button type="button" class="theme-toggle-btn" data-theme-toggle aria-label="Switch theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+        <!-- ================================================================
+             PANEL 1: OVERVIEW
+             ================================================================ -->
+        <section data-dash-panel="overview">
+          <!-- KPI Row -->
+          <div class="row g-4 mb-4 justify-content-center">
+            <div class="col-xl-3 col-md-6 col-sm-6">
+              <div class="dash-stat-card">
+                <span class="d-block small text-secondary text-uppercase fw-bold" style="font-size: 0.7rem; letter-spacing: 0.1em;">Booked This Week</span>
+                <div class="display-md display-font mt-1 mb-1" id="dashBookedCount">2</div>
+                <p class="small mb-0" style="color: var(--brand-mauve);">Classes reserved</p>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6 col-sm-6">
+              <div class="dash-stat-card">
+                <span class="d-block small text-secondary text-uppercase fw-bold" style="font-size: 0.7rem; letter-spacing: 0.1em;">Active Cycle</span>
+                <div class="display-md display-font mt-1 mb-1">Week 6</div>
+                <p class="small text-secondary mb-0">12-Week Strength Block</p>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6 col-sm-6">
+              <div class="dash-stat-card">
+                <span class="d-block small text-secondary text-uppercase fw-bold" style="font-size: 0.7rem; letter-spacing: 0.1em;">Daily Protein Target</span>
+                <div class="display-md display-font mt-1 mb-1">118g</div>
+                <p class="small text-secondary mb-0">Balanced Hormone Fuel</p>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6 col-sm-6">
+              <div class="dash-stat-card">
+                <span class="d-block small text-secondary text-uppercase fw-bold" style="font-size: 0.7rem; letter-spacing: 0.1em;">Membership Status</span>
+                <div class="display-md display-font mt-1 mb-1" style="color: var(--accent-coral);">14 Days</div>
+                <p class="small text-secondary mb-0">Until next renewal cycle</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4 align-items-stretch">
+            <!-- Quick Jump: Today's Focus -->
+            <div class="col-xl-7 col-md-6">
+              <div class="dash-panel-card h-100">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h2 class="h3 display-font mb-0">Upcoming Studio Sessions</h2>
+                  <button type="button" class="link-editorial bg-transparent border-0" data-dash-section="book">Book More <i class="bi bi-arrow-right"></i></button>
+                </div>
+
+                <div class="d-flex flex-column gap-3">
+                  <div class="p-3 rounded-3 bg-editorial-secondary d-flex flex-wrap align-items-center justify-content-between gap-3">
+                    <div class="d-flex align-items-center gap-3">
+                      <img src="assets/images/woman-barbell-squat.jpg" alt="Strength Training" class="rounded-3 object-fit-cover" width="60" height="60" />
+                      <div>
+                        <strong class="d-block mb-1">Strength Training — Lower Body &amp; Core</strong>
+                        <p class="small text-secondary mb-0">Tomorrow &bull; 07:00 AM &bull; Coach Elena Rostova</p>
+                      </div>
+                    </div>
+                    <span class="badge-valera">Confirmed</span>
+                  </div>
+
+                  <div class="p-3 rounded-3 bg-editorial-secondary d-flex flex-wrap align-items-center justify-content-between gap-3">
+                    <div class="d-flex align-items-center gap-3">
+                      <img src="assets/images/woman-pilates-reformer.jpg" alt="Pilates Reformer" class="rounded-3 object-fit-cover" width="60" height="60" />
+                      <div>
+                        <strong class="d-block mb-1">Pilates — Reformer Sculpt &amp; Spine</strong>
+                        <p class="small text-secondary mb-0">Friday &bull; 08:00 AM &bull; Coach Camille Laurent</p>
+                      </div>
+                    </div>
+                    <span class="badge-valera">Confirmed</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Membership Card -->
+            <div class="col-xl-5 col-md-6">
+              <div class="dash-panel-card h-100 d-flex flex-column justify-content-between" style="background-color: var(--bg-plum-section); color: #FAF7F2;">
+                <div>
+                  <span class="badge-valera mb-3" style="background: rgba(200,162,115,0.22); color: #DFBA88;">Atelier All-Access</span>
+                  <h2 class="display-sm text-white mb-2">Membership Renewal Reminder</h2>
+                  <p class="small mb-4" style="color: #E0D6D9;">
+                    Your current 3-month Unlimited Strength, Pilates &amp; Recovery pass expires in 14 days. Lock in your priority morning booking window by renewing early.
+                  </p>
+                </div>
+                <button type="button" class="btn-valera-coral w-100" data-dash-section="membership">
+                  Renew Membership <i class="bi bi-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             PANEL 2: BOOK CLASSES
+             ================================================================ -->
+        <section data-dash-panel="book" class="d-none">
+          <div class="dash-panel-card">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+              <div>
+                <span class="eyebrow mb-1">Live Studio Reservations</span>
+                <h2 class="display-md mb-0">Book Your Upcoming <span class="italic-accent">Classes</span></h2>
+              </div>
+              <span class="small text-secondary">Interactive frontend demo &mdash; click to reserve or release spots</span>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+              <div class="col-md-6">
+                <div class="p-3 rounded-4 border bg-editorial-secondary h-100 d-flex flex-column justify-content-between" style="border-color: var(--border-subtle) !important;">
+                  <div class="d-flex gap-3 mb-3">
+                    <img src="assets/images/woman-barbell-squat.jpg" alt="Strength Training" class="rounded-3 object-fit-cover flex-shrink-0" width="84" height="84" />
+                    <div>
+                      <span class="badge-valera mb-1">Strength</span>
+                      <span class="d-block small text-secondary mb-1">Thu &bull; 07:00 AM (50m)</span>
+                      <h3 class="h4 display-font mb-1">Strength Training</h3>
+                      <p class="small text-secondary mb-0">Coach Elena Rostova &bull; 3 spots remaining</p>
+                    </div>
+                  </div>
+                  <button type="button" class="btn-valera-outline w-100 py-2 is-booked" data-book-class>
+                    <i class="bi bi-check2-circle me-1"></i> Booked (Cancel)
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="p-3 rounded-4 border bg-editorial-secondary h-100 d-flex flex-column justify-content-between" style="border-color: var(--border-subtle) !important;">
+                  <div class="d-flex gap-3 mb-3">
+                    <img src="assets/images/woman-pilates-reformer.jpg" alt="Pilates" class="rounded-3 object-fit-cover flex-shrink-0" width="84" height="84" />
+                    <div>
+                      <span class="badge-valera mb-1">Mind &amp; Body</span>
+                      <span class="d-block small text-secondary mb-1">Fri &bull; 08:00 AM (45m)</span>
+                      <h3 class="h4 display-font mb-1">Pilates (Reformer Sculpt)</h3>
+                      <p class="small text-secondary mb-0">Coach Camille Laurent &bull; 2 spots remaining</p>
+                    </div>
+                  </div>
+                  <button type="button" class="btn-valera-outline w-100 py-2 is-booked" data-book-class>
+                    <i class="bi bi-check2-circle me-1"></i> Booked (Cancel)
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="p-3 rounded-4 border bg-editorial-secondary h-100 d-flex flex-column justify-content-between" style="border-color: var(--border-subtle) !important;">
+                  <div class="d-flex gap-3 mb-3">
+                    <img src="assets/images/women-indoor-cycling.jpg" alt="Indoor Cycling" class="rounded-3 object-fit-cover flex-shrink-0" width="84" height="84" />
+                    <div>
+                      <span class="badge-valera mb-1">Cardio</span>
+                      <span class="d-block small text-secondary mb-1">Fri &bull; 05:30 PM (45m)</span>
+                      <h3 class="h4 display-font mb-1">Indoor Cycling</h3>
+                      <p class="small text-secondary mb-0">Coach Zara Al-Mansoor &bull; 5 spots remaining</p>
+                    </div>
+                  </div>
+                  <button type="button" class="btn-valera-primary w-100 py-2" data-book-class>
+                    Book Spot <i class="bi bi-plus-lg ms-1"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="p-3 rounded-4 border bg-editorial-secondary h-100 d-flex flex-column justify-content-between" style="border-color: var(--border-subtle) !important;">
+                  <div class="d-flex gap-3 mb-3">
+                    <img src="assets/images/women-yoga-group.jpg" alt="Yoga" class="rounded-3 object-fit-cover flex-shrink-0" width="84" height="84" />
+                    <div>
+                      <span class="badge-valera mb-1">Mind &amp; Body</span>
+                      <span class="d-block small text-secondary mb-1">Sat &bull; 10:00 AM (55m)</span>
+                      <h3 class="h4 display-font mb-1">Yoga &amp; Mobility Flow</h3>
+                      <p class="small text-secondary mb-0">Coach Aria Vance &bull; 4 spots remaining</p>
+                    </div>
+                  </div>
+                  <button type="button" class="btn-valera-primary w-100 py-2" data-book-class>
+                    Book Spot <i class="bi bi-plus-lg ms-1"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             PANEL 3: WORKOUT PLAN
+             ================================================================ -->
+        <section data-dash-panel="workout" class="d-none">
+          <div class="dash-panel-card">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+              <div>
+                <span class="eyebrow mb-1">Assigned by Coach Elena Rostova</span>
+                <h2 class="display-md mb-0">Your 4-Day <span class="italic-accent">Workout</span> Split</h2>
+              </div>
+              <div class="filter-bar-valera" data-plan-tab-group="workout">
+                <button type="button" class="filter-pill-btn active" data-plan-tab="day1">Day 1: Lower Strength</button>
+                <button type="button" class="filter-pill-btn" data-plan-tab="day2">Day 2: Upper &amp; Core</button>
+                <button type="button" class="filter-pill-btn" data-plan-tab="day3">Day 3: Pilates &amp; Mobility</button>
+              </div>
+            </div>
+
+            <!-- Day 1 -->
+            <div data-plan-content-group="workout" data-plan-content="day1">
+              <div class="schedule-table-wrapper">
+                <table class="table-valera-schedule">
+                  <thead>
+                    <tr>
+                      <th>Done</th>
+                      <th>Exercise</th>
+                      <th>Sets &times; Reps</th>
+                      <th>Tempo / Rest</th>
+                      <th>Coaching Cue</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><input type="checkbox" class="form-check-input" aria-label="Mark Goblet Squat complete" /></td>
+                      <td class="fw-bold text-primary">Barbell Hip Thrust</td>
+                      <td>4 &times; 10</td>
+                      <td>2-1-1 &bull; 90s</td>
+                      <td>Posterior pelvic tilt at top, chin tucked</td>
+                    </tr>
+                    <tr>
+                      <td><input type="checkbox" class="form-check-input" aria-label="Mark RDL complete" /></td>
+                      <td class="fw-bold text-primary">Dumbbell Romanian Deadlift</td>
+                      <td>3 &times; 12</td>
+                      <td>3-1-1 &bull; 75s</td>
+                      <td>Soft knees, slide dumbbells tight to shins</td>
+                    </tr>
+                    <tr>
+                      <td><input type="checkbox" class="form-check-input" aria-label="Mark Split Squat complete" /></td>
+                      <td class="fw-bold text-primary">Bulgarian Split Squat</td>
+                      <td>3 &times; 10 each</td>
+                      <td>2-0-1 &bull; 60s</td>
+                      <td>Slight forward torso lean for glute bias</td>
+                    </tr>
+                    <tr>
+                      <td><input type="checkbox" class="form-check-input" aria-label="Mark Deadbug complete" /></td>
+                      <td class="fw-bold text-primary">Weighted Deadbug Hold</td>
+                      <td>3 &times; 12</td>
+                      <td>Slow &bull; 45s</td>
+                      <td>Keep lower back anchored into the mat</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div data-plan-content-group="workout" data-plan-content="day2" class="d-none">
+              <div class="schedule-table-wrapper">
+                <table class="table-valera-schedule">
+                  <thead>
+                    <tr>
+                      <th>Done</th>
+                      <th>Exercise</th>
+                      <th>Sets &times; Reps</th>
+                      <th>Tempo / Rest</th>
+                      <th>Coaching Cue</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><input type="checkbox" class="form-check-input" aria-label="Mark Lat Pulldown complete" /></td>
+                      <td class="fw-bold text-primary">Neutral-Grip Lat Pulldown</td>
+                      <td>4 &times; 10</td>
+                      <td>2-1-2 &bull; 75s</td>
+                      <td>Draw elbows toward ribs, avoid shrugging</td>
+                    </tr>
+                    <tr>
+                      <td><input type="checkbox" class="form-check-input" aria-label="Mark Arnold Press complete" /></td>
+                      <td class="fw-bold text-primary">Seated Dumbbell Overhead Press</td>
+                      <td>3 &times; 10</td>
+                      <td>2-0-1 &bull; 75s</td>
+                      <td>Ribcage stacked directly over pelvis</td>
+                    </tr>
+                    <tr>
+                      <td><input type="checkbox" class="form-check-input" aria-label="Mark Single-Arm Row complete" /></td>
+                      <td class="fw-bold text-primary">Single-Arm Cable Row</td>
+                      <td>3 &times; 12 each</td>
+                      <td>2-1-2 &bull; 60s</td>
+                      <td>Pause 1 second at mid-back contraction</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Day 3 -->
+            <div data-plan-content-group="workout" data-plan-content="day3" class="d-none">
+              <div class="schedule-table-wrapper">
+                <table class="table-valera-schedule">
+                  <thead>
+                    <tr>
+                      <th>Done</th>
+                      <th>Movement Ritual</th>
+                      <th>Duration / Reps</th>
+                      <th>Focus</th>
+                      <th>Studio Notes</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><input type="checkbox" class="form-check-input" aria-label="Mark Reformer Footwork complete" /></td>
+                      <td class="fw-bold text-primary">Reformer Footwork &amp; Hundred</td>
+                      <td>15 Mins</td>
+                      <td>Pelvic Floor &amp; Breath</td>
+                      <td>2 Red springs, lateral ribcage expansion</td>
+                    </tr>
+                    <tr>
+                      <td><input type="checkbox" class="form-check-input" aria-label="Mark Thoracic Openers complete" /></td>
+                      <td class="fw-bold text-primary">90/90 Hip Switches &amp; Thread-the-Needle</td>
+                      <td>3 &times; 8 each</td>
+                      <td>Hip Capsule &amp; Spine</td>
+                      <td>Smooth nasal breathing throughout</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             PANEL 4: DIET & NUTRITION PLAN
+             ================================================================ -->
+        <section data-dash-panel="diet" class="d-none">
+          <div class="dash-panel-card">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+              <div>
+                <span class="eyebrow mb-1">Precision Nutrition Guide</span>
+                <h2 class="display-md mb-0">Daily <span class="italic-accent">Nourishment</span> &amp; Macro Plan</h2>
+              </div>
+              <div class="filter-bar-valera" data-plan-tab-group="diet">
+                <button type="button" class="filter-pill-btn active" data-plan-tab="training-day">Training Day (1,950 kcal)</button>
+                <button type="button" class="filter-pill-btn" data-plan-tab="recovery-day">Recovery Day (1,750 kcal)</button>
+              </div>
+            </div>
+
+            <!-- Training Day Plan -->
+            <div data-plan-content-group="diet" data-plan-content="training-day">
+              <div class="row g-4 justify-content-center">
+                <div class="col-md-6">
+                  <div class="p-4 rounded-4 bg-editorial-secondary h-100">
+                    <span class="badge-valera mb-2">07:30 AM &bull; Pre-Session Fuel</span>
+                    <h3 class="h4 display-font mb-2">Matcha Chia &amp; Berry Collagen Bowl</h3>
+                    <p class="small text-secondary mb-2">Greek yogurt (200g), rolled oats, raspberries, 1 scoop collagen peptides, and toasted pumpkin seeds.</p>
+                    <span class="d-block small fw-bold" style="color: var(--brand-mauve);">32g Protein &bull; 38g Carbs &bull; 11g Fats</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-4 rounded-4 bg-editorial-secondary h-100">
+                    <span class="badge-valera mb-2">12:30 PM &bull; Midday Lunch</span>
+                    <h3 class="h4 display-font mb-2">Wild Salmon, Quinoa &amp; Roasted Greens</h3>
+                    <p class="small text-secondary mb-2">Herb-baked salmon (150g), tri-color quinoa, avocado slices, baby arugula, and lemon-tahini drizzle.</p>
+                    <span class="d-block small fw-bold" style="color: var(--brand-mauve);">38g Protein &bull; 44g Carbs &bull; 20g Fats</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-4 rounded-4 bg-editorial-secondary h-100">
+                    <span class="badge-valera mb-2">04:00 PM &bull; Post-Workout Snack</span>
+                    <h3 class="h4 display-font mb-2">Vanilla Whey &amp; Tart Cherry Tonic</h3>
+                    <p class="small text-secondary mb-2">Plant or grass-fed whey isolate blended with almond milk, tart cherry concentrate, and 1 banana.</p>
+                    <span class="d-block small fw-bold" style="color: var(--brand-mauve);">26g Protein &bull; 28g Carbs &bull; 3g Fats</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-4 rounded-4 bg-editorial-secondary h-100">
+                    <span class="badge-valera mb-2">07:30 PM &bull; Evening Dinner</span>
+                    <h3 class="h4 display-font mb-2">Herb Chicken, Sweet Potato &amp; Broccolini</h3>
+                    <p class="small text-secondary mb-2">Roasted free-range chicken breast (150g), cinnamon sweet potato medallions, and olive-oil broccolini.</p>
+                    <span class="d-block small fw-bold" style="color: var(--brand-mauve);">34g Protein &bull; 42g Carbs &bull; 14g Fats</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recovery Day Plan -->
+            <div data-plan-content-group="diet" data-plan-content="recovery-day" class="d-none">
+              <div class="row g-4 justify-content-center">
+                <div class="col-md-6">
+                  <div class="p-4 rounded-4 bg-editorial-secondary h-100">
+                    <span class="badge-valera mb-2">08:30 AM &bull; Morning</span>
+                    <h3 class="h4 display-font mb-2">Pasture-Raised Eggs, Avocado &amp; Sourdough</h3>
+                    <p class="small text-secondary mb-2">3 poached eggs, sprouted sourdough toast, microgreens, and sliced heirloom tomatoes.</p>
+                    <span class="d-block small fw-bold" style="color: var(--brand-mauve);">26g Protein &bull; 28g Carbs &bull; 21g Fats</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-4 rounded-4 bg-editorial-secondary h-100">
+                    <span class="badge-valera mb-2">01:00 PM &bull; Anti-Inflammatory Lunch</span>
+                    <h3 class="h4 display-font mb-2">Mediterranean Chickpea &amp; Grilled Turkey Bowl</h3>
+                    <p class="small text-secondary mb-2">Herb turkey tenderloin, cucumber, olives, roasted zucchini, and extra-virgin olive oil.</p>
+                    <span class="d-block small fw-bold" style="color: var(--brand-mauve);">36g Protein &bull; 30g Carbs &bull; 18g Fats</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             PANEL 5: RENEW MEMBERSHIP
+             ================================================================ -->
+        <section data-dash-panel="membership" class="d-none">
+          <div class="dash-panel-card">
+            <span class="eyebrow mb-1">Membership &amp; Billing Preferences</span>
+            <h2 class="display-md mb-2">Renew Your <span class="italic-accent">Valéra</span> Membership</h2>
+            <p class="small text-secondary mb-4">
+              Select a renewal cycle below to extend your unlimited access to Strength, Pilates, Cardio, and Recovery suites.
+            </p>
+
+            <div class="row g-3 mb-4 justify-content-center">
+              <div class="col-xl-4 col-md-6">
+                <div class="membership-plan-option" data-renewal-plan="Monthly Atelier Pass ($245/mo)">
+                  <span class="badge-valera mb-2">Flexible</span>
+                  <h3 class="h4 display-font mb-1">Monthly Pass</h3>
+                  <div class="h3 display-font mb-1" style="color: var(--brand-mauve);">$245</div>
+                  <span class="d-block small text-secondary mb-2">Billed monthly</span>
+                  <p class="small text-secondary mb-0">12 group classes/mo + tonic lounge access.</p>
+                </div>
+              </div>
+              <div class="col-xl-4 col-md-6">
+                <div class="membership-plan-option selected" data-renewal-plan="Quarterly All-Access ($660/3 mo)">
+                  <span class="badge-valera mb-2">Most Popular</span>
+                  <h3 class="h4 display-font mb-1">Quarterly All-Access</h3>
+                  <div class="h3 display-font mb-1" style="color: var(--brand-mauve);">$220</div>
+                  <span class="d-block small text-secondary mb-2">Per month (billed quarterly)</span>
+                  <p class="small text-secondary mb-0">Unlimited classes + 1 monthly 1-on-1 check-in.</p>
+                </div>
+              </div>
+              <div class="col-xl-4 col-md-6">
+                <div class="membership-plan-option" data-renewal-plan="Annual Sanctuary VIP ($2,340/yr)">
+                  <span class="badge-valera mb-2">Save 20%</span>
+                  <h3 class="h4 display-font mb-1">Annual VIP</h3>
+                  <div class="h3 display-font mb-1" style="color: var(--brand-mauve);">$195</div>
+                  <span class="d-block small text-secondary mb-2">Per month (billed annually)</span>
+                  <p class="small text-secondary mb-0">Unlimited access + private locker + quarterly screening.</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="dashRenewSuccess" class="d-none p-4 rounded-4 mb-4 border" style="background-color: var(--brand-mauve-soft); border-color: var(--brand-mauve) !important;">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill fs-3" style="color: var(--brand-mauve);"></i>
+                <div>
+                  <h3 class="h4 display-font mb-1">Renewal Selection Confirmed</h3>
+                  <p class="small text-secondary mb-0">
+                    Your selected plan has been logged in this standalone frontend template preview. In production, this integrates with Stripe or your studio billing gateway.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <form id="dashRenewForm" class="p-4 rounded-4 bg-editorial-secondary border" style="border-color: var(--border-subtle) !important;">
+              <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+                <div>
+                  <span class="small text-secondary d-block">Selected Renewal Plan:</span>
+                  <strong id="selectedRenewalPlanName" class="h5 display-font mb-0">Quarterly All-Access ($660/3 mo)</strong>
+                </div>
+                <button type="submit" class="btn-valera-primary">
+                  Confirm Membership Renewal <i class="bi bi-arrow-up-right"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

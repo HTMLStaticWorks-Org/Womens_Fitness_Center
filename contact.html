@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact &amp; Membership Enquiry | VALÉRA Women's Studio</title>
+  <meta name="description" content="Connect with the Valéra Studio Concierge. Book a private tour, enquire about memberships, or schedule your 1-on-1 women's strength assessment." />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+
+  <!-- Prevent Flash of Unstyled Theme & Direction -->
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('valera_theme_preference') || 'light';
+        var dir = localStorage.getItem('valera_dir_preference') || 'ltr';
+        document.documentElement.setAttribute('data-theme', saved);
+        document.documentElement.setAttribute('dir', dir);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5.3 CSS & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- Custom Design System Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ========================================================================
+       MANDATORY STICKY NAVIGATION BAR
+       ======================================================================== -->
+  <header class="valera-navbar" role="banner">
+    <div class="container-fluid">
+      <a href="index.html" class="navbar-brand-valera" aria-label="Valéra Home">
+        <span class="brand-icon-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 18L32 48L48 18" stroke="#FAF7F2" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M24 18L32 33L40 18" stroke="#C8A273" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="32" cy="13" r="3.5" fill="#D46F58"/>
+          </svg>
+        </span>
+        <span class="brand-text-stack">
+          <span class="brand-title">VALÉRA</span>
+          <span class="brand-subtitle">Strength &amp; Wellness Atelier</span>
+        </span>
+      </a>
+
+      <div class="d-flex align-items-center gap-2 d-lg-none">
+        <button type="button" class="theme-toggle-btn rtl-toggle-btn" data-rtl-toggle aria-label="Toggle RTL direction" aria-pressed="false">RTL</button>
+        <button type="button" class="theme-toggle-btn" data-theme-toggle aria-label="Switch theme">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+        <button type="button" class="valera-hamburger" id="valeraHamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="valeraNavCollapse">
+          <i class="bi bi-list fs-4"></i>
+        </button>
+      </div>
+
+      <nav class="valera-nav-collapse" id="valeraNavCollapse" aria-label="Main Navigation">
+        <ul class="valera-nav-menu">
+          <li class="valera-nav-item valera-dropdown">
+            <button type="button" class="valera-nav-link valera-dropdown-toggle" aria-expanded="false">
+              <span>Home</span>
+              <i class="bi bi-chevron-down dropdown-SingleChevron"></i>
+            </button>
+            <ul class="valera-dropdown-menu" aria-label="Home variations">
+              <li>
+                <a href="index.html" class="valera-dropdown-item">
+                  <span class="item-title">Home 1 — Sanctuary Flagship <i class="bi bi-arrow-up-right"></i></span>
+                  <span class="item-desc">Cinematic strength &amp; athletic club experience</span>
+                </a>
+              </li>
+              <li>
+                <a href="home-2.html" class="valera-dropdown-item">
+                  <span class="item-title">Home 2 — Editorial Atelier <i class="bi bi-arrow-up-right"></i></span>
+                  <span class="item-desc">Lifestyle movement, pilates &amp; member chronicle</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="valera-nav-item"><a href="about.html" class="valera-nav-link">About</a></li>
+          <li class="valera-nav-item"><a href="classes.html" class="valera-nav-link">Classes</a></li>
+          <li class="valera-nav-item"><a href="trainers.html" class="valera-nav-link">Trainers</a></li>
+          <li class="valera-nav-item"><a href="contact.html" class="valera-nav-link active">Contact</a></li>
+          <li class="valera-nav-item"><a href="dashboard.html" class="valera-nav-link">Dashboard</a></li>
+        </ul>
+
+        <div class="valera-nav-actions d-none d-lg-flex">
+          <button type="button" class="theme-toggle-btn rtl-toggle-btn" data-rtl-toggle aria-label="Toggle RTL direction" aria-pressed="false">RTL</button>
+          <button type="button" class="theme-toggle-btn" data-theme-toggle aria-label="Switch theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <a href="signup.html" class="btn-valera-primary btn-nav-join">
+            Sign Up <i class="bi bi-arrow-up-right"></i>
+          </a>
+        </div>
+
+        <div class="valera-nav-actions-mobile d-lg-none">
+          <a href="signup.html" class="btn-valera-primary w-100">
+            Sign Up <i class="bi bi-arrow-up-right"></i>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         1. UNIFORM NON-HOME PAGE HERO (.page-hero-valera)
+         ====================================================================== -->
+    <section class="page-hero-valera">
+      <div class="container">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-7">
+            <span class="eyebrow" data-gsap-hero>Studio Concierge &amp; Membership</span>
+            <h1 class="display-xl mb-3" data-gsap-hero>
+              Begin Your <span class="italic-accent">Conversation</span> With Valéra.
+            </h1>
+            <p class="lead-editorial mb-4" data-gsap-hero>
+              Whether you are enquiring about our 14-Day Discovery Pass, private 1-on-1 strength coaching, or group class placement, our concierge team responds personally to every message.
+            </p>
+            <div class="d-flex flex-wrap gap-3" data-gsap-hero>
+              <a href="#enquiry-form" class="btn-valera-primary">
+                Submit Enquiry <i class="bi bi-arrow-down ms-1"></i>
+              </a>
+              <a href="https://wa.me/12125550194?text=Hello%20Val%C3%A9ra%20Concierge%2C%20I%20would%20like%20to%20enquire%20about%20studio%20membership%20and%20classes." target="_blank" rel="noopener noreferrer" class="whatsapp-pill shadow-sm">
+                <i class="bi bi-whatsapp fs-5"></i> WhatsApp Concierge
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="rounded-4 overflow-hidden shadow-md" style="aspect-ratio: 16/10;" data-gsap-hero>
+              <img src="assets/images/women-gym-friends.jpg" alt="Valéra Studio Member Concierge and Training Lounge" class="w-100 h-100 object-fit-cover" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         2. CONTACT DETAILS + MEMBERSHIP ENQUIRY FORM
+         ====================================================================== -->
+    <section id="enquiry-form" class="section-padding">
+      <div class="container">
+        <div class="row gy-5">
+          <div class="col-lg-5 pe-lg-4">
+            <span class="eyebrow">Direct Sanctuary Access</span>
+            <h2 class="display-md mb-4">Visit or Reach Our <span class="italic-accent">SoHo</span> Atelier.</h2>
+
+            <div class="row g-4 mb-4 justify-content-center">
+              <div class="col-md-6 col-lg-12">
+                <div class="p-4 rounded-4 bg-editorial-surface border h-100" style="border-color: var(--border-subtle) !important;">
+                  <div class="d-flex align-items-start gap-3">
+                    <i class="bi bi-geo-alt-fill fs-4" style="color: var(--brand-mauve);"></i>
+                    <div>
+                      <h3 class="h5 display-font mb-1">Studio Address</h3>
+                      <p class="small text-secondary mb-0">
+                        480 Mercer Street, Suite 3B (Private Elevator)<br />
+                        SoHo Historic District, New York, NY 10013
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-12">
+                <div class="p-4 rounded-4 bg-editorial-surface border h-100" style="border-color: var(--border-subtle) !important;">
+                  <div class="d-flex align-items-start gap-3 mb-3 pb-3 border-bottom" style="border-color: var(--border-subtle) !important;">
+                    <i class="bi bi-telephone-fill fs-5" style="color: var(--brand-mauve);"></i>
+                    <div>
+                      <h3 class="h5 display-font mb-1">Phone Number</h3>
+                      <a href="tel:+12125550194" class="d-block small fw-semibold text-secondary mb-1">+1 (212) 555-0194</a>
+                      <p class="small text-secondary mb-0">Direct Front Desk &amp; Member Concierge</p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-start gap-3">
+                    <i class="bi bi-envelope-paper-fill fs-5" style="color: var(--brand-mauve);"></i>
+                    <div>
+                      <h3 class="h5 display-font mb-1">Email Address</h3>
+                      <a href="mailto:concierge@valerastudio.com" class="d-block small fw-semibold text-secondary mb-1">concierge@valerastudio.com</a>
+                      <p class="small text-secondary mb-0">Partnerships: press@valerastudio.com</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-12">
+                <div class="p-4 rounded-4 bg-editorial-surface border h-100" style="border-color: var(--border-subtle) !important;">
+                  <div class="d-flex align-items-start gap-3">
+                    <i class="bi bi-clock-fill fs-5" style="color: var(--brand-mauve);"></i>
+                    <div class="w-100">
+                      <h3 class="h5 display-font mb-2">Opening Hours</h3>
+                      <div class="d-flex justify-content-between small text-secondary mb-1">
+                        <span>Monday &ndash; Thursday</span>
+                        <span class="fw-semibold text-primary">06:00 AM &ndash; 08:30 PM</span>
+                      </div>
+                      <div class="d-flex justify-content-between small text-secondary mb-1">
+                        <span>Friday</span>
+                        <span class="fw-semibold text-primary">06:00 AM &ndash; 07:30 PM</span>
+                      </div>
+                      <div class="d-flex justify-content-between small text-secondary">
+                        <span>Saturday &ndash; Sunday</span>
+                        <span class="fw-semibold text-primary">07:30 AM &ndash; 05:00 PM</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-12">
+                <div class="p-4 rounded-4 bg-editorial-secondary border h-100" style="border-color: var(--border-subtle) !important;">
+                  <h3 class="h5 display-font mb-2">Instant WhatsApp &amp; Social Community</h3>
+                  <p class="small text-secondary mb-3">
+                    Message our desk directly on WhatsApp for same-day class availability or private tour scheduling.
+                  </p>
+                  <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+                    <a href="https://wa.me/12125550194" target="_blank" rel="noopener noreferrer" class="whatsapp-pill">
+                      <i class="bi bi-whatsapp"></i> Message on WhatsApp
+                    </a>
+                    <div class="d-flex gap-2">
+                      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn-valera-outline p-2 rounded-circle" style="width: 38px; height: 38px;" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                      <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="btn-valera-outline p-2 rounded-circle" style="width: 38px; height: 38px;" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                      <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="btn-valera-outline p-2 rounded-circle" style="width: 38px; height: 38px;" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="form-card-valera">
+              <span class="eyebrow">Membership &amp; Class Enquiry</span>
+              <h2 class="display-md mb-2">Request Your <span class="italic-accent">Personal</span> Invitation</h2>
+              <p class="small text-secondary mb-4">
+                Complete the enquiry form below. Our membership advisor will follow up with class schedules, pricing tiers, and onboarding options.
+              </p>
+
+              <div id="contactFormSuccess" class="d-none p-4 rounded-4 mb-4 border" style="background-color: var(--brand-mauve-soft); border-color: var(--brand-mauve) !important;">
+                <div class="d-flex align-items-start gap-3">
+                  <i class="bi bi-check-circle-fill fs-3" style="color: var(--brand-mauve);"></i>
+                  <div>
+                    <h3 class="h4 display-font mb-1">Thank You, <span data-submitted-name>Member</span>!</h3>
+                    <p class="small text-secondary mb-0">
+                      Your membership and training enquiry has been validated. <em>(Note: This is a standalone frontend template demonstration; in production, this form connects to your studio CRM or email endpoint.)</em>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <form id="valeraContactForm" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="contactName" class="form-label-valera">Full Name *</label>
+                    <input type="text" id="contactName" class="form-control-valera" placeholder="e.g., Sophia Laurent" required />
+                    <div class="invalid-feedback-valera">Please enter your full name (minimum 2 characters).</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="contactEmail" class="form-label-valera">Email Address *</label>
+                    <input type="email" id="contactEmail" class="form-control-valera" placeholder="sophia@example.com" required />
+                    <div class="invalid-feedback-valera">Please provide a valid email address.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="contactPhone" class="form-label-valera">Phone Number *</label>
+                    <input type="tel" id="contactPhone" class="form-control-valera" placeholder="+1 (555) 234-5678" required />
+                    <div class="invalid-feedback-valera">Please enter a valid contact phone number.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="contactGoal" class="form-label-valera">Primary Fitness Goal *</label>
+                    <select id="contactGoal" class="form-select-valera" required>
+                      <option value="">Select your primary goal...</option>
+                      <option value="Build Lean Strength & Muscle Tone">Build Lean Strength &amp; Muscle Tone</option>
+                      <option value="Core Stability, Posture & Pilates">Core Stability, Posture &amp; Pilates</option>
+                      <option value="Begin My Fitness Journey Safely">Begin My Fitness Journey Safely</option>
+                      <option value="Cardiovascular Stamina & Energy">Cardiovascular Stamina &amp; Energy</option>
+                      <option value="Pre/Postnatal Strength & Recovery">Pre/Postnatal Strength &amp; Recovery</option>
+                      <option value="Flexibility, Mobility & Stress Relief">Flexibility, Mobility &amp; Stress Relief</option>
+                    </select>
+                    <div class="invalid-feedback-valera">Please select your primary fitness goal.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="contactProgram" class="form-label-valera">Preferred Training Program *</label>
+                    <select id="contactProgram" class="form-select-valera" required>
+                      <option value="">Choose a training program...</option>
+                      <option value="Strength & Conditioning">Strength &amp; Conditioning (Group)</option>
+                      <option value="Cardio & Movement">Cardio &amp; Movement (HIIT / Cycle / Dance)</option>
+                      <option value="Mind & Body">Mind &amp; Body (Reformer Pilates / Yoga / Recovery)</option>
+                      <option value="Personal Training">1-on-1 Personal Training</option>
+                      <option value="14-Day All-Access Discovery Pass">14-Day All-Access Discovery Pass</option>
+                    </select>
+                    <div class="invalid-feedback-valera">Please select your preferred training program.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="contactLevel" class="form-label-valera">Current Experience Level *</label>
+                    <select id="contactLevel" class="form-select-valera" required>
+                      <option value="">Select your experience level...</option>
+                      <option value="Beginner (New to structured training)">Beginner (New to structured training)</option>
+                      <option value="Intermediate (Train 1-3x per week)">Intermediate (Train 1&ndash;3x per week)</option>
+                      <option value="Advanced (Experienced lifter / athlete)">Advanced (Experienced lifter / athlete)</option>
+                      <option value="Returning after a hiatus or post-partum">Returning after a hiatus or post-partum</option>
+                    </select>
+                    <div class="invalid-feedback-valera">Please select your current experience level.</div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="contactMessage" class="form-label-valera">Additional Message or Preferred Times</label>
+                    <textarea id="contactMessage" rows="4" class="form-control-valera" placeholder="Share any injuries, preferred training times (mornings/evenings), or questions for our coaches..."></textarea>
+                  </div>
+
+                  <div class="col-12 pt-2">
+                    <button type="submit" class="btn-valera-primary w-100 py-3">
+                      Submit Enquiry <i class="bi bi-arrow-up-right ms-1"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. STUDIO MAP & LOCATION SECTION
+         ====================================================================== -->
+    <section class="section-padding-sm bg-editorial-secondary border-top" style="border-color: var(--border-subtle) !important;">
+      <div class="container">
+        <div class="row align-items-center gy-4 mb-4">
+          <div class="col-lg-7">
+            <span class="eyebrow">Sanctuary Location</span>
+            <h2 class="display-md mb-0">In the Heart of <span class="italic-accent">SoHo</span>, Steps From Prince Street.</h2>
+          </div>
+          <div class="col-lg-5 text-lg-end">
+            <span class="small text-secondary"><i class="bi bi-train-front me-1"></i> Subway: N/R/W at Prince St &bull; B/D/F/M at Broadway-Lafayette</span>
+          </div>
+        </div>
+
+        <div class="rounded-4 overflow-hidden border shadow-sm position-relative" style="border-color: var(--border-subtle) !important; height: 380px; background-color: var(--bg-tertiary);">
+          <iframe
+            title="Valéra Studio SoHo Location Map"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-74.0045%2C40.7215%2C-73.9945%2C40.7275&amp;layer=mapnik&amp;marker=40.7245%2C-73.9995"
+            style="width: 100%; height: 100%; border: 0; filter: grayscale(0.25) contrast(1.02);"
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       PROFESSIONAL MULTI-COLUMN FOOTER (WHITE IN LIGHT MODE)
+       ======================================================================== -->
+  <footer class="valera-footer" role="contentinfo">
+    <div class="container">
+      <div class="row gy-5 pb-5 footer-top-divider">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="navbar-brand-valera mb-3">
+            <span class="brand-icon-mark" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 18L32 48L48 18" stroke="#FAF7F2" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M24 18L32 33L40 18" stroke="#C8A273" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="32" cy="13" r="3.5" fill="#D46F58"/>
+              </svg>
+            </span>
+            <span class="brand-text-stack">
+              <span class="brand-title">VALÉRA</span>
+              <span class="brand-subtitle">Strength &amp; Wellness Atelier</span>
+            </span>
+          </a>
+          <p class="small mb-4 footer-muted-text" style="max-width: 340px;">
+            An architectural women's fitness sanctuary uniting progressive strength training, athletic Reformer Pilates, and holistic recovery under master female coaching.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-circle-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-circle-link" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-circle-link" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-circle-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home 1 — Sanctuary</a></li>
+            <li><a href="home-2.html">Home 2 — Atelier</a></li>
+            <li><a href="about.html">About Valéra</a></li>
+            <li><a href="classes.html">All Classes</a></li>
+            <li><a href="trainers.html">Our Trainers</a></li>
+            <li><a href="contact.html">Contact &amp; Enquiry</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-6">
+          <h4>Disciplines &amp; Member</h4>
+          <ul class="footer-links">
+            <li><a href="classes.html#strength-section">Strength &amp; Conditioning</a></li>
+            <li><a href="classes.html#cardio-section">HIIT &amp; Indoor Cycling</a></li>
+            <li><a href="classes.html#mindbody-section">Reformer &amp; Mat Pilates</a></li>
+            <li><a href="dashboard.html">Member Dashboard</a></li>
+            <li><a href="login.html">Member Login</a></li>
+            <li><a href="signup.html">Create Account</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4>Studio Sanctuary</h4>
+          <p class="small mb-2 footer-muted-text">
+            <i class="bi bi-geo-alt me-2" style="color: var(--brand-mauve);"></i> 480 Mercer Street, Suite 3B, SoHo, NY 10013
+          </p>
+          <p class="small mb-3 footer-muted-text">
+            <i class="bi bi-clock me-2" style="color: var(--brand-mauve);"></i> Mon–Fri: 6:00 AM – 8:30 PM<br />
+            <span class="ms-4">Sat–Sun: 7:30 AM – 5:00 PM</span>
+          </p>
+          <form class="valera-newsletter-form mt-3" novalidate>
+            <label for="footerEmail6" class="small text-uppercase tracking-wider d-block mb-2 fw-bold" style="font-size: 0.7rem; letter-spacing: 0.1em;">Subscribe to The Valéra Journal</label>
+            <div class="d-flex gap-2">
+              <input type="email" id="footerEmail6" class="form-control-valera py-2 px-3 small" placeholder="Your email address" required />
+              <button type="submit" class="btn-valera-coral py-2 px-3" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+            </div>
+            <div class="newsletter-feedback small mt-2 d-none" style="color: var(--brand-mauve);"></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="pt-4 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 small footer-bottom-bar">
+        <div>&copy; 2026 VALÉRA Strength &amp; Wellness Atelier. All rights reserved.</div>
+        <div class="d-flex gap-4">
+          <a href="about.html" class="text-reset">Studio Etiquette</a>
+          <a href="contact.html" class="text-reset">Membership Terms</a>
+          <a href="signup.html" class="text-reset">Join Studio</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button type="button" class="back-to-top-btn" id="valeraBackToTop" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

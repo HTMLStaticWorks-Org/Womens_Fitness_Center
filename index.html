@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VALÉRA — Women's Strength &amp; Wellness Atelier | Home 1</title>
+  <meta name="description"
+    content="Valéra is a premier women's boutique strength training, reformer pilates, and holistic conditioning sanctuary designed for lasting confidence and transformation." />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+
+  <!-- Prevent Flash of Unstyled Theme & Direction -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('valera_theme_preference') || 'light';
+        var dir = localStorage.getItem('valera_dir_preference') || 'ltr';
+        document.documentElement.setAttribute('data-theme', saved);
+        document.documentElement.setAttribute('dir', dir);
+      } catch (e) { }
+    })();
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Bootstrap 5.3 CSS & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- Custom Design System Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+  <!-- ========================================================================
+       MANDATORY STICKY NAVIGATION BAR
+       ======================================================================== -->
+  <header class="valera-navbar" role="banner">
+    <div class="container-fluid">
+      <!-- Brand Logo + Icon -->
+      <a href="index.html" class="navbar-brand-valera" aria-label="Valéra Home">
+        <span class="brand-icon-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 18L32 48L48 18" stroke="#FAF7F2" stroke-width="4.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M24 18L32 33L40 18" stroke="#C8A273" stroke-width="3.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <circle cx="32" cy="13" r="3.5" fill="#D46F58" />
+          </svg>
+        </span>
+        <span class="brand-text-stack">
+          <span class="brand-title">VALÉRA</span>
+          <span class="brand-subtitle">Strength &amp; Wellness Atelier</span>
+        </span>
+      </a>
+
+      <!-- Mobile Actions (RTL + Theme Toggle + Hamburger) -->
+      <div class="d-flex align-items-center gap-2 d-lg-none">
+        <button type="button" class="theme-toggle-btn rtl-toggle-btn" data-rtl-toggle aria-label="Toggle RTL direction"
+          aria-pressed="false">RTL</button>
+        <button type="button" class="theme-toggle-btn" data-theme-toggle aria-label="Switch theme">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+        <button type="button" class="valera-hamburger" id="valeraHamburger" aria-label="Toggle navigation"
+          aria-expanded="false" aria-controls="valeraNavCollapse">
+          <i class="bi bi-list fs-4"></i>
+        </button>
+      </div>
+
+      <!-- Collapsible Navigation Menu -->
+      <nav class="valera-nav-collapse" id="valeraNavCollapse" aria-label="Main Navigation">
+        <ul class="valera-nav-menu">
+          <!-- 1. Home Dropdown -->
+          <li class="valera-nav-item valera-dropdown">
+            <button type="button" class="valera-nav-link valera-dropdown-toggle active" aria-expanded="false">
+              <span>Home</span>
+              <i class="bi bi-chevron-down dropdown-SingleChevron"></i>
+            </button>
+            <ul class="valera-dropdown-menu" aria-label="Home variations">
+              <li>
+                <a href="index.html" class="valera-dropdown-item active">
+                  <span class="item-title">Home 1 — Sanctuary Flagship <i class="bi bi-arrow-up-right"></i></span>
+                  <span class="item-desc">Cinematic strength &amp; athletic club experience</span>
+                </a>
+              </li>
+              <li>
+                <a href="home-2.html" class="valera-dropdown-item">
+                  <span class="item-title">Home 2 — Editorial Atelier <i class="bi bi-arrow-up-right"></i></span>
+                  <span class="item-desc">Lifestyle movement, pilates &amp; member chronicle</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- 2. About (next to Home) -->
+          <li class="valera-nav-item">
+            <a href="about.html" class="valera-nav-link">About</a>
+          </li>
+
+          <!-- 3. Classes -->
+          <li class="valera-nav-item">
+            <a href="classes.html" class="valera-nav-link">Classes</a>
+          </li>
+
+          <!-- 4. Trainers -->
+          <li class="valera-nav-item">
+            <a href="trainers.html" class="valera-nav-link">Trainers</a>
+          </li>
+
+          <!-- 5. Contact -->
+          <li class="valera-nav-item">
+            <a href="contact.html" class="valera-nav-link">Contact</a>
+          </li>
+
+          <!-- 6. Dashboard (beside Contact) -->
+          <li class="valera-nav-item">
+            <a href="dashboard.html" class="valera-nav-link">Dashboard</a>
+          </li>
+        </ul>
+
+        <!-- Desktop Right Actions: RTL + Theme Toggle + Sign Up CTA -->
+        <div class="valera-nav-actions d-none d-lg-flex">
+          <button type="button" class="theme-toggle-btn rtl-toggle-btn" data-rtl-toggle
+            aria-label="Toggle RTL direction" aria-pressed="false">RTL</button>
+          <button type="button" class="theme-toggle-btn" data-theme-toggle aria-label="Switch theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <a href="signup.html" class="btn-valera-primary btn-nav-join">
+            Sign Up <i class="bi bi-arrow-up-right"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Drawer CTA -->
+        <div class="valera-nav-actions-mobile d-lg-none">
+          <a href="signup.html" class="btn-valera-primary w-100">
+            Sign Up <i class="bi bi-arrow-up-right"></i>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         1. CINEMATIC HERO SECTION
+         ====================================================================== -->
+    <section class="hero-home-1">
+      <div class="hero-home-1-bg">
+        <img src="assets/images/women-dumbbell-group.jpg"
+          alt="Confident women training together with dumbbells in Valéra boutique fitness studio" />
+      </div>
+      <div class="hero-home-1-overlay"></div>
+
+      <div class="container hero-home-1-content py-5">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-7">
+            <span class="eyebrow eyebrow-light" data-gsap-hero>Private Women's Strength &amp; Movement Club</span>
+            <h1 class="display-xl mb-4" data-gsap-hero>
+              Built for <span class="italic-accent">Unapologetic</span> Strength, Sculpted for Life.
+            </h1>
+            <p class="lead mb-4 text-white-50" style="max-width: 580px; color: #E2D9DC !important;" data-gsap-hero>
+              Welcome to Valéra—an architectural fitness sanctuary exclusively for women. We unite progressive strength
+              conditioning, precision Pilates, and master coaching inside an empowering, ego-free community.
+            </p>
+            <div class="d-flex flex-wrap gap-3 pt-2" data-gsap-hero>
+              <a href="signup.html" class="btn-valera-coral">
+                Join Our Community <i class="bi bi-arrow-right"></i>
+              </a>
+              <a href="classes.html" class="btn-valera-outline-light">
+                Explore Classes
+              </a>
+            </div>
+
+            <!-- Studio Metric Highlights -->
+            <div class="row g-3 mt-5 pt-2 justify-content-center" data-gsap-hero>
+              <div class="col-xl-4 col-md-6 col-sm-6">
+                <div class="hero-stat-pill">
+                  <div class="stat-number">12:1</div>
+                  <p class="small text-uppercase tracking-wider mt-1 mb-0"
+                    style="letter-spacing: 0.08em; font-size: 0.72rem; color: #D8CED1;">Member-to-Coach</p>
+                </div>
+              </div>
+              <div class="col-xl-4 col-md-6 col-sm-6">
+                <div class="hero-stat-pill">
+                  <div class="stat-number">45+</div>
+                  <p class="small text-uppercase tracking-wider mt-1 mb-0"
+                    style="letter-spacing: 0.08em; font-size: 0.72rem; color: #D8CED1;">Weekly Curated Sessions</p>
+                </div>
+              </div>
+              <div class="col-xl-4 col-md-6 col-sm-6">
+                <div class="hero-stat-pill">
+                  <div class="stat-number">98%</div>
+                  <p class="small text-uppercase tracking-wider mt-1 mb-0"
+                    style="letter-spacing: 0.08em; font-size: 0.72rem; color: #D8CED1;">Member Retention Rate</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Floating Architectural Spotlight Card -->
+          <div class="col-lg-5">
+            <div class="hero-floating-card ms-lg-4" data-gsap-hero>
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <span class="badge-valera" style="background: rgba(200,162,115,0.22); color: #DFBA88;">Signature
+                  Track</span>
+                <span class="small" style="color: #C7BDC0;"><i class="bi bi-clock me-1"></i> 50 Min Sessions</span>
+              </div>
+              <div class="rounded-3 overflow-hidden mb-3" style="aspect-ratio: 16/10;">
+                <img src="assets/images/woman-dumbbells-bright.jpg"
+                  alt="Focused woman performing dumbbell strength training" class="w-100 h-100 object-fit-cover" />
+              </div>
+              <h2 class="h4 display-font text-white mb-2">Foundational Strength &amp; Metabolic Sculpt</h2>
+              <p class="small mb-3" style="color: #D0C6C9;">
+                Designed for female physiology—combining compound resistance training, core stabilization, and guided
+                mobility to build lean power without burnout.
+              </p>
+              <div
+                class="d-flex align-items-center justify-content-between pt-2 border-top border-secondary border-opacity-25">
+                <span class="small fw-semibold" style="color: #DFBA88;">Beginner to Advanced Tracks</span>
+                <a href="classes.html" class="text-white small fw-bold text-uppercase" style="letter-spacing: 0.1em;">
+                  View Schedule <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Editorial Marquee Bar -->
+    <div class="editorial-ticker" aria-label="Studio Pillars">
+      <div class="container-fluid">
+        <div class="ticker-track">
+          <span>Progressive Strength Training</span>
+          <span class="ticker-dot"></span>
+          <span>Reformer &amp; Mat Pilates</span>
+          <span class="ticker-dot"></span>
+          <span>1-on-1 Personal Coaching</span>
+          <span class="ticker-dot"></span>
+          <span>Metabolic Conditioning</span>
+          <span class="ticker-dot"></span>
+          <span>Mindful Mobility &amp; Recovery</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         2. FEATURED FITNESS PROGRAMS
+         ====================================================================== -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="row align-items-end justify-content-between mb-5 gy-3">
+          <div class="col-lg-7">
+            <span class="eyebrow">Curated Pillars</span>
+            <h2 class="display-lg mb-0">
+              Three Disciplines. One <span class="italic-accent">Harmonious</span> Methodology.
+            </h2>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <p class="mb-3 text-secondary">
+              Every Valéra program is structured around female biomechanics, hormonal rhythm awareness, and progressive
+              overload.
+            </p>
+            <a href="classes.html" class="link-editorial">Explore All Programs <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-xl-4 col-md-6">
+            <article class="editorial-card">
+              <div class="editorial-img-wrap">
+                <span class="badge-overlay-top">Pillar 01</span>
+                <img src="assets/images/woman-barbell-squat.jpg"
+                  alt="Woman performing barbell squat strength training" />
+              </div>
+              <div class="p-4 p-xl-5 d-flex flex-column flex-grow-1 justify-content-between">
+                <div>
+                  <span class="badge-valera mb-3">Strength &amp; Conditioning</span>
+                  <h3 class="display-sm mb-3">Progressive Resistance &amp; Sculpt</h3>
+                  <p class="text-secondary mb-4">
+                    Master barbell, kettlebell, and cable mechanics in an unhurried, form-focused environment. Build
+                    bone density, glute and posterior chain power, and lasting metabolic vitality.
+                  </p>
+                </div>
+                <div class="pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="small fw-semibold text-secondary"><i class="bi bi-layers me-1"></i> 4 Signature
+                      Classes</span>
+                    <a href="classes.html#strength-section" class="link-editorial">Discover <i
+                        class="bi bi-arrow-up-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-xl-4 col-md-6">
+            <article class="editorial-card">
+              <div class="editorial-img-wrap">
+                <span class="badge-overlay-top">Pillar 02</span>
+                <img src="assets/images/women-indoor-cycling.jpg"
+                  alt="Women riding indoor cycling bikes in studio class" />
+              </div>
+              <div class="p-4 p-xl-5 d-flex flex-column flex-grow-1 justify-content-between">
+                <div>
+                  <span class="badge-valera mb-3">Cardio &amp; Movement</span>
+                  <h3 class="display-sm mb-3">Metabolic Conditioning &amp; Rhythm</h3>
+                  <p class="text-secondary mb-4">
+                    High-energy, low-joint-impact athletic intervals, rhythm indoor cycling, and dance-infused sculpting
+                    that elevate cardiovascular endurance and endorphin flow.
+                  </p>
+                </div>
+                <div class="pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="small fw-semibold text-secondary"><i class="bi bi-layers me-1"></i> 4 Signature
+                      Classes</span>
+                    <a href="classes.html#cardio-section" class="link-editorial">Discover <i
+                        class="bi bi-arrow-up-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-xl-4 col-md-6">
+            <article class="editorial-card">
+              <div class="editorial-img-wrap">
+                <span class="badge-overlay-top">Pillar 03</span>
+                <img src="assets/images/pilates-reformer-class.jpg"
+                  alt="Women practicing Reformer Pilates in sunlit boutique studio" />
+              </div>
+              <div class="p-4 p-xl-5 d-flex flex-column flex-grow-1 justify-content-between">
+                <div>
+                  <span class="badge-valera mb-3">Mind &amp; Body</span>
+                  <h3 class="display-sm mb-3">Precision Pilates, Yoga &amp; Recovery</h3>
+                  <p class="text-secondary mb-4">
+                    Lengthen, align, and restore. Our Mind &amp; Body suite pairs athletic Reformer &amp; Mat Pilates
+                    with vinyasa flow, deep fascial mobility, and nervous system recovery.
+                  </p>
+                </div>
+                <div class="pt-3 border-top" style="border-color: var(--border-subtle) !important;">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="small fw-semibold text-secondary"><i class="bi bi-layers me-1"></i> 4 Signature
+                      Classes</span>
+                    <a href="classes.html#mindbody-section" class="link-editorial">Discover <i
+                        class="bi bi-arrow-up-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. POPULAR GROUP WORKOUT CLASSES
+         ====================================================================== -->
+    <section class="section-padding bg-editorial-secondary">
+      <div class="container">
+        <div class="row justify-content-between align-items-end mb-5 gy-3">
+          <div class="col-lg-6">
+            <span class="eyebrow">Studio Favorites</span>
+            <h2 class="display-lg mb-0">
+              Most Requested <span class="italic-accent">Group</span> Sessions
+            </h2>
+          </div>
+          <div class="col-lg-5 text-lg-end">
+            <a href="classes.html" class="btn-valera-outline">
+              View Full Class Directory &amp; Schedule <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="row g-4 mb-4 justify-content-center">
+          <div class="col-md-6">
+            <div class="editorial-card flex-xl-row">
+              <div class="col-xl-5 editorial-img-wrap aspect-square">
+                <img src="assets/images/woman-kettlebell-squat.jpg" alt="Woman performing kettlebell squat workout" />
+              </div>
+              <div class="col-xl-7 p-4 d-flex flex-column justify-content-between">
+                <div>
+                  <div class="d-flex flex-wrap gap-2 mb-2">
+                    <span class="badge-valera">Strength</span>
+                    <span class="badge-valera badge-level-intermediate">All Levels / Progressive</span>
+                  </div>
+                  <h3 class="h3 display-font mb-2">Barbell &amp; Lower Body Architecture</h3>
+                  <p class="small text-secondary mb-3">
+                    Focused lower-body and core strength training utilizing hip thrusts, deadlift variations, and tempo
+                    squats with hands-on biomechanical coaching.
+                  </p>
+                </div>
+                <div>
+                  <div
+                    class="d-flex align-items-center justify-content-between small text-secondary mb-3 pt-2 border-top"
+                    style="border-color: var(--border-subtle) !important;">
+                    <span><i class="bi bi-clock me-1"></i> 50 Mins</span>
+                    <span><i class="bi bi-person-check me-1"></i> Coach Elena Rostova</span>
+                  </div>
+                  <a href="contact.html?program=Strength+%26+Conditioning&class=Barbell+%26+Lower+Body+Architecture#enquiry-form"
+                    class="btn-valera-primary w-100 py-2">
+                    Join Class <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="editorial-card flex-xl-row">
+              <div class="col-xl-5 editorial-img-wrap aspect-square">
+                <img src="assets/images/woman-pilates-reformer.jpg"
+                  alt="Woman practicing on Reformer Pilates machine" />
+              </div>
+              <div class="col-xl-7 p-4 d-flex flex-column justify-content-between">
+                <div>
+                  <div class="d-flex flex-wrap gap-2 mb-2">
+                    <span class="badge-valera">Mind &amp; Body</span>
+                    <span class="badge-valera badge-level-beginner">Beginner Friendly</span>
+                  </div>
+                  <h3 class="h3 display-font mb-2">Athletic Pilates &amp; Deep Core Sculpt</h3>
+                  <p class="small text-secondary mb-3">
+                    Slow-burn isometric resistance, spinal articulation, and deep transverse abdominis activation for
+                    long, resilient posture and toned stability.
+                  </p>
+                </div>
+                <div>
+                  <div
+                    class="d-flex align-items-center justify-content-between small text-secondary mb-3 pt-2 border-top"
+                    style="border-color: var(--border-subtle) !important;">
+                    <span><i class="bi bi-clock me-1"></i> 45 Mins</span>
+                    <span><i class="bi bi-person-check me-1"></i> Coach Camille Laurent</span>
+                  </div>
+                  <a href="contact.html?program=Mind+%26+Body&class=Athletic+Pilates+%26+Deep+Core+Sculpt#enquiry-form"
+                    class="btn-valera-primary w-100 py-2">
+                    Join Class <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="editorial-card flex-xl-row">
+              <div class="col-xl-5 editorial-img-wrap aspect-square">
+                <img src="assets/images/woman-two-dumbbells.jpg"
+                  alt="Woman performing metabolic dumbbell conditioning" />
+              </div>
+              <div class="col-xl-7 p-4 d-flex flex-column justify-content-between">
+                <div>
+                  <div class="d-flex flex-wrap gap-2 mb-2">
+                    <span class="badge-valera">Cardio &amp; Movement</span>
+                    <span class="badge-valera badge-level-intermediate">Intermediate</span>
+                  </div>
+                  <h3 class="h3 display-font mb-2">Ignite HIIT &amp; Metabolic Sprints</h3>
+                  <p class="small text-secondary mb-3">
+                    Precision work-to-rest intervals pairing ergonomic air bikes, kettlebell complexes, and plyometric
+                    power to boost VO2 max and stamina.
+                  </p>
+                </div>
+                <div>
+                  <div
+                    class="d-flex align-items-center justify-content-between small text-secondary mb-3 pt-2 border-top"
+                    style="border-color: var(--border-subtle) !important;">
+                    <span><i class="bi bi-clock me-1"></i> 45 Mins</span>
+                    <span><i class="bi bi-person-check me-1"></i> Coach Maya Lin</span>
+                  </div>
+                  <a href="contact.html?program=Cardio+%26+Movement&class=Ignite+HIIT+%26+Metabolic+Sprints#enquiry-form"
+                    class="btn-valera-primary w-100 py-2">
+                    Join Class <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="editorial-card flex-xl-row">
+              <div class="col-xl-5 editorial-img-wrap aspect-square">
+                <img src="assets/images/women-yoga-group.jpg" alt="Group of women practicing restorative yoga flow" />
+              </div>
+              <div class="col-xl-7 p-4 d-flex flex-column justify-content-between">
+                <div>
+                  <div class="d-flex flex-wrap gap-2 mb-2">
+                    <span class="badge-valera">Mind &amp; Body</span>
+                    <span class="badge-valera badge-level-beginner">All Levels</span>
+                  </div>
+                  <h3 class="h3 display-font mb-2">Infrared Flow &amp; Myofascial Release</h3>
+                  <p class="small text-secondary mb-3">
+                    Down-regulate cortisol levels and unlock tight hips, shoulders, and thoracic spine with guided
+                    breathwork and assisted mobility.
+                  </p>
+                </div>
+                <div>
+                  <div
+                    class="d-flex align-items-center justify-content-between small text-secondary mb-3 pt-2 border-top"
+                    style="border-color: var(--border-subtle) !important;">
+                    <span><i class="bi bi-clock me-1"></i> 55 Mins</span>
+                    <span><i class="bi bi-person-check me-1"></i> Coach Aria Vance</span>
+                  </div>
+                  <a href="contact.html?program=Mind+%26+Body&class=Infrared+Flow+%26+Myofascial+Release#enquiry-form"
+                    class="btn-valera-primary w-100 py-2">
+                    Join Class <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. WHY CHOOSE OUR STUDIO SECTION
+         ====================================================================== -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-6">
+            <div class="position-relative pe-lg-4">
+              <div class="rounded-4 overflow-hidden shadow-lg" style="aspect-ratio: 4/5;">
+                <img src="assets/images/personal-trainer-guide.jpg"
+                  alt="Female personal trainer guiding member in women's studio" class="w-100 h-100 object-fit-cover" />
+              </div>
+              <div class="p-4 rounded-4 shadow-lg mt-3 mt-md-0"
+                style="background-color: var(--bg-plum-section); color: #FAF7F2; max-width: 320px; position: relative; z-index: 2;">
+                <div class="d-flex align-items-center gap-3 mb-2">
+                  <i class="bi bi-shield-check fs-3" style="color: var(--accent-champagne);"></i>
+                  <h3 class="h5 display-font mb-0 text-white">100% Women-Dedicated Sanctuary</h3>
+                </div>
+                <p class="small mb-0" style="color: #D9CFD2;">
+                  Thoughtfully engineered equipment ergonomics, private luxury changing suites, and zero intimidation.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <span class="eyebrow">Why Choose Valéra</span>
+            <h2 class="display-lg mb-4">
+              Where Luxury Hospitality Meets <span class="italic-accent">Evidence-Based</span> Training.
+            </h2>
+            <p class="lead-editorial mb-5">
+              We rejected the overcrowded, fluorescent commercial gym model. Instead, we built an intimate athletic club
+              where every barbell, reformer, and recovery ritual is tailored to how women build strength.
+            </p>
+
+            <div class="row g-4 justify-content-center">
+              <div class="col-sm-6">
+                <div class="p-4 rounded-4 h-100 bg-editorial-secondary border"
+                  style="border-color: var(--border-subtle) !important;">
+                  <div class="pillar-number mb-2">01</div>
+                  <h3 class="h4 display-font mb-2">Small-Group Precision</h3>
+                  <p class="small text-secondary mb-0">
+                    Capped at 12 women per strength session so your coach monitors every rep, hinge, and alignment cue
+                    in real time.
+                  </p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-4 rounded-4 h-100 bg-editorial-secondary border"
+                  style="border-color: var(--border-subtle) !important;">
+                  <div class="pillar-number mb-2">02</div>
+                  <h3 class="h4 display-font mb-2">Female Physiology First</h3>
+                  <p class="small text-secondary mb-0">
+                    Programming designed around joint stability, pelvic floor integrity, bone mineral density, and
+                    sustainable energy.
+                  </p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-4 rounded-4 h-100 bg-editorial-secondary border"
+                  style="border-color: var(--border-subtle) !important;">
+                  <div class="pillar-number mb-2">03</div>
+                  <h3 class="h4 display-font mb-2">Beginner-Welcoming</h3>
+                  <p class="small text-secondary mb-0">
+                    Whether lifting your first kettlebell or hitting a 2x bodyweight deadlift, every member starts with
+                    a 1-on-1 movement assessment.
+                  </p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-4 rounded-4 h-100 bg-editorial-secondary border"
+                  style="border-color: var(--border-subtle) !important;">
+                  <div class="pillar-number mb-2">04</div>
+                  <h3 class="h4 display-font mb-2">Spa-Grade Sanctuary</h3>
+                  <p class="small text-secondary mb-0">
+                    Acoustic warmth, circadian lighting, botanical locker suites, infrared recovery zones, and
+                    post-session adaptogenic bar.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. FITNESS BENEFITS & TRAINING PHILOSOPHY (DARK ARCHITECTURAL SECTION)
+         ====================================================================== -->
+    <section class="section-padding bg-editorial-dark">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-5">
+            <span class="eyebrow eyebrow-light">Training Philosophy</span>
+            <h2 class="display-lg mb-4">
+              Strength Is Not a Season. It Is Your <span class="italic-accent"
+                style="color: var(--accent-champagne);">Foundation</span>.
+            </h2>
+            <p class="mb-4" style="color: #C7BDC0;">
+              For decades, the fitness industry told women to shrink, punish their bodies with endless cardio, and fear
+              heavy resistance. At Valéra, we train for capability, longevity, and radiant confidence.
+            </p>
+            <ul class="list-unstyled d-flex flex-column gap-3 mb-4">
+              <li class="d-flex align-items-start gap-3">
+                <i class="bi bi-check2-circle fs-5" style="color: var(--accent-champagne);"></i>
+                <div>
+                  <strong class="text-white d-block">Metabolic &amp; Skeletal Longevity</strong>
+                  <span class="small" style="color: #B8AEB2;">Progressive resistance stimulates lean muscle tissue and
+                    protects bone health across every decade of a woman's life.</span>
+                </div>
+              </li>
+              <li class="d-flex align-items-start gap-3">
+                <i class="bi bi-check2-circle fs-5" style="color: var(--accent-champagne);"></i>
+                <div>
+                  <strong class="text-white d-block">Nervous System Balance</strong>
+                  <span class="small" style="color: #B8AEB2;">Pairing high-output training days with mobility,
+                    breathwork, and Pilates prevents cortisol spikes and chronic fatigue.</span>
+                </div>
+              </li>
+              <li class="d-flex align-items-start gap-3">
+                <i class="bi bi-check2-circle fs-5" style="color: var(--accent-champagne);"></i>
+                <div>
+                  <strong class="text-white d-block">Measurable Progression, Zero Obsession</strong>
+                  <span class="small" style="color: #B8AEB2;">We celebrate strength milestones, posture, sleep quality,
+                    and energy—not crash-diet metrics.</span>
+                </div>
+              </li>
+            </ul>
+            <a href="about.html" class="btn-valera-light mt-2">
+              Read Our Complete Philosophy <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="row g-4 justify-content-center">
+              <div class="col-sm-6">
+                <div class="rounded-4 overflow-hidden mb-4" style="aspect-ratio: 4/5;">
+                  <img src="assets/images/woman-barbell-press.jpg" alt="Sporty woman performing overhead barbell press"
+                    class="w-100 h-100 object-fit-cover" />
+                </div>
+                <div class="p-4 rounded-4"
+                  style="background: rgba(250,247,242,0.06); border: 1px solid rgba(250,247,242,0.12);">
+                  <h3 class="h4 display-font text-white mb-2">12-Week Strength Cycles</h3>
+                  <p class="small mb-0" style="color: #C7BDC0;">
+                    Structured periodization so you never walk into a random workout—every week builds upon the last.
+                  </p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-4 rounded-4 mb-4"
+                  style="background: rgba(200,162,115,0.14); border: 1px solid rgba(200,162,115,0.3);">
+                  <h3 class="h4 display-font text-white mb-2">Cycle-Synced Options</h3>
+                  <p class="small mb-0" style="color: #E2D8DC;">
+                    Coaches trained to help you scale intensity or pivot to restorative mobility when your body calls
+                    for recovery.
+                  </p>
+                </div>
+                <div class="rounded-4 overflow-hidden" style="aspect-ratio: 4/5;">
+                  <img src="assets/images/woman-leg-stretch.jpg"
+                    alt="Woman performing guided flexibility and mobility stretch"
+                    class="w-100 h-100 object-fit-cover" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. FEATURED TRAINER PROFILES
+         ====================================================================== -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="row justify-content-between align-items-end mb-5 gy-3">
+          <div class="col-lg-7">
+            <span class="eyebrow">Leadership &amp; Coaching</span>
+            <h2 class="display-lg mb-0">
+              Guided by <span class="italic-accent">Master</span> Female Coaches.
+            </h2>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a href="trainers.html" class="btn-valera-outline">
+              Meet All Studio Trainers <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-xl-4 col-md-6">
+            <article class="trainer-card">
+              <div class="editorial-img-wrap aspect-portrait">
+                <span class="badge-overlay-top">Head of Strength</span>
+                <img src="assets/images/woman-gym-focus.jpg" alt="Elena Rostova - Head Strength & Conditioning Coach" />
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between">
+                <div>
+                  <h3 class="display-sm mb-1">Elena Rostova, CSCS</h3>
+                  <p class="small fw-bold text-uppercase mb-3"
+                    style="color: var(--brand-mauve); letter-spacing: 0.08em;">
+                    Director of Strength &amp; Biomechanics
+                  </p>
+                  <p class="small text-secondary mb-3">
+                    Former collegiate track athlete with 11 years coaching female strength transformations, post-natal
+                    return-to-lifting, and barbell mechanics.
+                  </p>
+                </div>
+                <div class="pt-3 border-top d-flex justify-content-between align-items-center"
+                  style="border-color: var(--border-subtle) !important;">
+                  <span class="expertise-tag">CSCS &bull; Pre/Postnatal</span>
+                  <a href="trainers.html" class="link-editorial">Full Bio <i class="bi bi-arrow-up-right"></i></a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-xl-4 col-md-6">
+            <article class="trainer-card">
+              <div class="editorial-img-wrap aspect-portrait">
+                <span class="badge-overlay-top">Pilates Lead</span>
+                <img src="assets/images/woman-yoga-mat-stretch.jpg"
+                  alt="Camille Laurent - Principal Pilates & Mobility Instructor" />
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between">
+                <div>
+                  <h3 class="display-sm mb-1">Camille Laurent</h3>
+                  <p class="small fw-bold text-uppercase mb-3"
+                    style="color: var(--brand-mauve); letter-spacing: 0.08em;">
+                    Principal Reformer &amp; Core Specialist
+                  </p>
+                  <p class="small text-secondary mb-3">
+                    Trained in contemporary STOTT Pilates and classical dance conditioning, Camille specializes in
+                    spinal decompression and deep core architecture.
+                  </p>
+                </div>
+                <div class="pt-3 border-top d-flex justify-content-between align-items-center"
+                  style="border-color: var(--border-subtle) !important;">
+                  <span class="expertise-tag">STOTT Pilates &bull; FRCms</span>
+                  <a href="trainers.html" class="link-editorial">Full Bio <i class="bi bi-arrow-up-right"></i></a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-xl-4 col-md-6">
+            <article class="trainer-card">
+              <div class="editorial-img-wrap aspect-portrait">
+                <span class="badge-overlay-top">Metabolic &amp; HIIT</span>
+                <img src="assets/images/woman-kettlebell-1.jpg"
+                  alt="Maya Lin - Senior Personal Trainer & Conditioning Coach" />
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between">
+                <div>
+                  <h3 class="display-sm mb-1">Maya Lin, NASM-CPT</h3>
+                  <p class="small fw-bold text-uppercase mb-3"
+                    style="color: var(--brand-mauve); letter-spacing: 0.08em;">
+                    Senior Personal Trainer &amp; HIIT Lead
+                  </p>
+                  <p class="small text-secondary mb-3">
+                    Known for infectious warmth and precision pacing, Maya empowers beginners and busy executives to
+                    build sustainable stamina and total-body athleticism.
+                  </p>
+                </div>
+                <div class="pt-3 border-top d-flex justify-content-between align-items-center"
+                  style="border-color: var(--border-subtle) !important;">
+                  <span class="expertise-tag">NASM-CPT &bull; Precision Nutrition</span>
+                  <a href="trainers.html" class="link-editorial">Full Bio <i class="bi bi-arrow-up-right"></i></a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         7. COMMUNITY & MEMBER EXPERIENCE SECTION
+         ====================================================================== -->
+    <section class="section-padding bg-editorial-secondary">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-5">
+            <span class="eyebrow">Member Experience</span>
+            <h2 class="display-lg mb-4">
+              More Than a Workout—A <span class="italic-accent">Sisterhood</span> of Ambition.
+            </h2>
+            <p class="text-secondary mb-4">
+              Our members are founders, mothers, creatives, physicians, and students who value an uplifting third space.
+              Beyond daily classes, Valéra hosts monthly strength clinics, women's longevity panels, and Sunday recovery
+              socials.
+            </p>
+            <div class="d-flex flex-column gap-3 mb-4">
+              <div class="p-3 rounded-3 bg-editorial-surface border"
+                style="border-color: var(--border-subtle) !important;">
+                <strong class="d-block mb-1"><i class="bi bi-stars me-2"
+                    style="color: var(--brand-mauve);"></i>Complimentary Onboarding Assessment</strong>
+                <p class="small text-secondary mb-0">Every new member receives a private 45-minute movement screen and
+                  goal-mapping consultation.</p>
+              </div>
+              <div class="p-3 rounded-3 bg-editorial-surface border"
+                style="border-color: var(--border-subtle) !important;">
+                <strong class="d-block mb-1"><i class="bi bi-cup-hot me-2" style="color: var(--brand-mauve);"></i>The
+                  Apothecary &amp; Tonic Lounge</strong>
+                <p class="small text-secondary mb-0">Unwind post-session with organic collagen matchas, electrolyte
+                  infusions, and quiet workspace nooks.</p>
+              </div>
+            </div>
+            <a href="signup.html" class="btn-valera-primary">
+              Become a Member <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="row g-3">
+              <div class="col-7">
+                <div class="rounded-4 overflow-hidden h-100" style="min-height: 280px;">
+                  <img src="assets/images/pilates-studio-towers.jpg"
+                    alt="Valéra bright sunlit Pilates and movement studio interior"
+                    class="w-100 h-100 object-fit-cover" />
+                </div>
+              </div>
+              <div class="col-5">
+                <div class="rounded-4 overflow-hidden h-100" style="min-height: 280px;">
+                  <img src="assets/images/women-gym-friends.jpg" alt="Two women chatting and connecting in boutique gym"
+                    class="w-100 h-100 object-fit-cover" />
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="rounded-4 overflow-hidden position-relative" style="aspect-ratio: 21/9;">
+                  <img src="assets/images/woman-following-trainer.jpg"
+                    alt="Female athlete training with personal instructor" class="w-100 h-100 object-fit-cover" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         8. MEMBER TESTIMONIALS
+         ====================================================================== -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="text-center mx-auto mb-5" style="max-width: 680px;">
+          <span class="eyebrow">Member Stories</span>
+          <h2 class="display-lg mb-3">
+            Transformations Measured in <span class="italic-accent">Confidence</span>.
+          </h2>
+          <p class="text-secondary">
+            Hear from the women who made Valéra part of their weekly ritual.
+          </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-xl-4 col-md-6">
+            <div class="testimonial-card">
+              <div>
+                <div class="mb-3" style="color: var(--accent-champagne);">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p class="testimonial-quote">
+                  “I had never touched a barbell before joining Valéra at age 38. Six months later, my chronic
+                  lower-back tension is gone, I deadlift 155 lbs with confidence, and I genuinely look forward to 7 AM
+                  sessions.”
+                </p>
+              </div>
+              <div class="d-flex align-items-center gap-3 pt-3 border-top"
+                style="border-color: var(--border-subtle) !important;">
+                <img src="assets/images/woman-trainer-portrait.jpg" alt="Sophia Chen"
+                  class="rounded-circle object-fit-cover" width="48" height="48" />
+                <div>
+                  <h3 class="h6 mb-1 fw-bold">Sophia M. Chen</h3>
+                  <p class="small text-secondary mb-0">Architect &bull; Member for 14 Months</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-4 col-md-6">
+            <div class="testimonial-card">
+              <div>
+                <div class="mb-3" style="color: var(--accent-champagne);">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p class="testimonial-quote">
+                  “The combination of progressive strength and athletic Pilates completely reshaped my posture after my
+                  second pregnancy. The coaches know your name, your injuries, and exactly when to challenge you.”
+                </p>
+              </div>
+              <div class="d-flex align-items-center gap-3 pt-3 border-top"
+                style="border-color: var(--border-subtle) !important;">
+                <img src="assets/images/woman-yoga-mindfulness.jpg" alt="Claire Beaumont"
+                  class="rounded-circle object-fit-cover" width="48" height="48" />
+                <div>
+                  <h3 class="h6 mb-1 fw-bold">Claire Beaumont</h3>
+                  <p class="small text-secondary mb-0">Creative Director &bull; Member for 2 Years</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-4 col-md-6">
+            <div class="testimonial-card">
+              <div>
+                <div class="mb-3" style="color: var(--accent-champagne);">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p class="testimonial-quote">
+                  “Every detail of this studio feels serene and intentional. There is zero ego on the floor—only women
+                  encouraging other women to lift heavier, move better, and prioritize their wellbeing.”
+                </p>
+              </div>
+              <div class="d-flex align-items-center gap-3 pt-3 border-top"
+                style="border-color: var(--border-subtle) !important;">
+                <img src="assets/images/woman-kettlebell-side.jpg" alt="Dr. Amara Okafor"
+                  class="rounded-circle object-fit-cover" width="48" height="48" />
+                <div>
+                  <h3 class="h6 mb-1 fw-bold">Dr. Amara Okafor</h3>
+                  <p class="small text-secondary mb-0">Dermatologist &bull; Member for 9 Months</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         9. FINAL JOIN NOW CTA SECTION
+         ====================================================================== -->
+    <section class="section-padding-sm bg-editorial-plum">
+      <div class="container">
+        <div class="row align-items-center justify-content-between gy-4">
+          <div class="col-lg-7">
+            <span class="eyebrow eyebrow-light">Begin Your Chapter</span>
+            <h2 class="display-lg mb-3">
+              Step Into Your Strongest, Most <span class="italic-accent"
+                style="color: var(--accent-champagne);">Confident</span> Self.
+            </h2>
+            <p class="mb-0" style="color: #E0D6D9; max-width: 600px;">
+              Book your private onboarding consultation or apply for a 14-Day Studio Discovery Pass. All fitness levels
+              warmly welcomed.
+            </p>
+          </div>
+          <div class="col-lg-5 text-lg-end">
+            <div class="d-flex flex-wrap gap-3 justify-content-lg-end">
+              <a href="signup.html" class="btn-valera-coral">
+                Sign Up Now <i class="bi bi-arrow-up-right"></i>
+              </a>
+              <a href="classes.html" class="btn-valera-outline-light">
+                Browse Classes
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       PROFESSIONAL MULTI-COLUMN FOOTER (WHITE IN LIGHT MODE)
+       ======================================================================== -->
+  <footer class="valera-footer" role="contentinfo">
+    <div class="container">
+      <div class="row gy-5 pb-5 footer-top-divider">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="navbar-brand-valera mb-3">
+            <span class="brand-icon-mark" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 18L32 48L48 18" stroke="#FAF7F2" stroke-width="4.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M24 18L32 33L40 18" stroke="#C8A273" stroke-width="3.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <circle cx="32" cy="13" r="3.5" fill="#D46F58" />
+              </svg>
+            </span>
+            <span class="brand-text-stack">
+              <span class="brand-title">VALÉRA</span>
+              <span class="brand-subtitle">Strength &amp; Wellness Atelier</span>
+            </span>
+          </a>
+          <p class="small mb-4 footer-muted-text" style="max-width: 340px;">
+            An architectural women's fitness sanctuary uniting progressive strength training, athletic Reformer Pilates,
+            and holistic recovery under master female coaching.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-circle-link"
+              aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-circle-link"
+              aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-circle-link"
+              aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-circle-link"
+              aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home 1 — Sanctuary</a></li>
+            <li><a href="home-2.html">Home 2 — Atelier</a></li>
+            <li><a href="about.html">About Valéra</a></li>
+            <li><a href="classes.html">All Classes</a></li>
+            <li><a href="trainers.html">Our Trainers</a></li>
+            <li><a href="contact.html">Contact &amp; Enquiry</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-6">
+          <h4>Disciplines &amp; Member</h4>
+          <ul class="footer-links">
+            <li><a href="classes.html#strength-section">Strength &amp; Conditioning</a></li>
+            <li><a href="classes.html#cardio-section">HIIT &amp; Indoor Cycling</a></li>
+            <li><a href="classes.html#mindbody-section">Reformer &amp; Mat Pilates</a></li>
+            <li><a href="dashboard.html">Member Dashboard</a></li>
+            <li><a href="login.html">Member Login</a></li>
+            <li><a href="signup.html">Create Account</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4>Studio Sanctuary</h4>
+          <p class="small mb-2 footer-muted-text">
+            <i class="bi bi-geo-alt me-2" style="color: var(--brand-mauve);"></i> 480 Mercer Street, Suite 3B, SoHo, NY
+            10013
+          </p>
+          <p class="small mb-3 footer-muted-text">
+            <i class="bi bi-clock me-2" style="color: var(--brand-mauve);"></i> Mon–Fri: 6:00 AM – 8:30 PM<br />
+            <span class="ms-4">Sat–Sun: 7:30 AM – 5:00 PM</span>
+          </p>
+          <form class="valera-newsletter-form mt-3" novalidate>
+            <label for="footerEmail1" class="small text-uppercase tracking-wider d-block mb-2 fw-bold"
+              style="font-size: 0.7rem; letter-spacing: 0.1em;">Subscribe to The Valéra Journal</label>
+            <div class="d-flex gap-2">
+              <input type="email" id="footerEmail1" class="form-control-valera py-2 px-3 small"
+                placeholder="Your email address" required />
+              <button type="submit" class="btn-valera-coral py-2 px-3" aria-label="Subscribe"><i
+                  class="bi bi-arrow-right"></i></button>
+            </div>
+            <div class="newsletter-feedback small mt-2 d-none" style="color: var(--brand-mauve);"></div>
+          </form>
+        </div>
+      </div>
+
+      <div
+        class="pt-4 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 small footer-bottom-bar">
+        <div>&copy; 2026 VALÉRA Strength &amp; Wellness Atelier. All rights reserved.</div>
+        <div class="d-flex gap-4">
+          <a href="about.html" class="text-reset">Studio Etiquette</a>
+          <a href="contact.html" class="text-reset">Membership Terms</a>
+          <a href="signup.html" class="text-reset">Join Studio</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button type="button" class="back-to-top-btn" id="valeraBackToTop" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

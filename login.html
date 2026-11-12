@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Member Login | VALÉRA Strength &amp; Wellness Atelier</title>
+  <meta name="description" content="Sign in to your Valéra Member Portal to book studio classes, view your workout & diet plans, and manage your membership." />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+
+  <!-- Prevent Flash of Unstyled Theme & Direction -->
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('valera_theme_preference') || 'light';
+        var dir = localStorage.getItem('valera_dir_preference') || 'ltr';
+        document.documentElement.setAttribute('data-theme', saved);
+        document.documentElement.setAttribute('dir', dir);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5.3 CSS & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- Custom Design System Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="auth-page">
+
+  <main class="auth-section">
+    <div class="auth-card-single">
+
+      <!-- Brand Icon + Brand Name Top Center Inside Card -->
+      <div class="auth-brand-top">
+        <a href="index.html" class="navbar-brand-valera" aria-label="Valéra Home">
+          <span class="brand-icon-mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 18L32 48L48 18" stroke="#FAF7F2" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M24 18L32 33L40 18" stroke="#C8A273" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="32" cy="13" r="3.5" fill="#D46F58"/>
+            </svg>
+          </span>
+          <span class="brand-text-stack">
+            <span class="brand-title">VALÉRA</span>
+            <span class="brand-subtitle">Strength &amp; Wellness Atelier</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="text-center mb-4">
+        <h1 class="display-md mb-1">Welcome <span class="italic-accent">Back</span></h1>
+        <p class="small text-secondary mb-0">
+          Enter your registered email address or mobile number to sign in.
+        </p>
+      </div>
+
+      <!-- Frontend Demo Feedback Banner -->
+      <div id="loginDemoFeedback" class="d-none p-3 rounded-3 mb-4 border" style="background-color: var(--brand-mauve-soft); border-color: var(--brand-mauve) !important;">
+        <div class="d-flex align-items-start gap-2">
+          <i class="bi bi-check-circle-fill mt-1" style="color: var(--brand-mauve);"></i>
+          <div class="small">
+            <strong>Validation Passed:</strong> This standalone UI preview is ready—you can now explore the <a href="dashboard.html" class="fw-bold text-decoration-underline">Member Dashboard</a> or <a href="classes.html" class="fw-bold text-decoration-underline">Classes</a>.
+          </div>
+        </div>
+      </div>
+
+      <form id="valeraLoginForm" novalidate>
+        <!-- Line 1: Email or Mobile Number -->
+        <div class="mb-3">
+          <label for="loginIdentifier" class="form-label-valera">Email or Mobile Number *</label>
+          <input type="text" id="loginIdentifier" class="form-control-valera" placeholder="sophia@example.com or +1 (555) 234-5678" autocomplete="username" required />
+          <div class="invalid-feedback-valera">Please enter a valid email address or mobile number.</div>
+        </div>
+
+        <!-- Line 2: Password + Visibility Toggle -->
+        <div class="mb-3">
+          <label for="loginPassword" class="form-label-valera">Password *</label>
+          <div class="password-field-wrapper">
+            <input type="password" id="loginPassword" class="form-control-valera pe-5" placeholder="Enter your password" autocomplete="current-password" required />
+            <button type="button" class="password-toggle-btn" data-password-toggle="loginPassword" aria-label="Show password">
+              <i class="bi bi-eye"></i>
+            </button>
+          </div>
+          <div class="invalid-feedback-valera">Please enter your password (minimum 6 characters).</div>
+        </div>
+
+        <!-- Line 3: Remember Me & Forgot Password on the Same Line -->
+        <div class="d-flex align-items-center justify-content-between gap-2 mb-4">
+          <div class="form-check mb-0">
+            <input class="form-check-input" type="checkbox" id="loginRememberMe" />
+            <label class="form-check-label small text-secondary" for="loginRememberMe">
+              Remember me
+            </label>
+          </div>
+          <a href="#forgotPasswordBox" id="forgotPasswordTrigger" class="small fw-semibold text-nowrap" style="color: var(--brand-mauve);">Forgot password?</a>
+        </div>
+
+        <!-- Interactive Forgot Password Helper Box -->
+        <div id="forgotPasswordBox" class="d-none p-3 rounded-3 bg-editorial-secondary mb-3 small">
+          <strong class="d-block mb-1">Password Reset Assistance</strong>
+          <span class="text-secondary d-block mb-2">To reset your member password or update your mobile number on file, please reach out to our studio desk.</span>
+          <a href="contact.html" class="link-editorial">Contact Studio Desk <i class="bi bi-arrow-right"></i></a>
+        </div>
+
+        <!-- Login Button -->
+        <button type="submit" class="btn-valera-primary w-100 py-3">
+          Login to Studio Portal <i class="bi bi-arrow-right ms-1"></i>
+        </button>
+      </form>
+
+      <!-- Bottom Social Sign-In Icons (Google & Apple) -->
+      <div class="auth-social-divider">Or continue with</div>
+      <div class="auth-social-buttons mb-4">
+        <button type="button" class="btn-social-auth" onclick="document.getElementById('loginDemoFeedback').classList.remove('d-none');">
+          <i class="bi bi-google"></i>
+          <span>Google</span>
+        </button>
+        <button type="button" class="btn-social-auth" onclick="document.getElementById('loginDemoFeedback').classList.remove('d-none');">
+          <i class="bi bi-apple"></i>
+          <span>Apple</span>
+        </button>
+      </div>
+
+      <div class="text-center pt-3 border-top small text-secondary" style="border-color: var(--border-subtle) !important;">
+        New to Valéra Strength &amp; Wellness?
+        <a href="signup.html" class="fw-bold ms-1 text-decoration-underline" style="color: var(--brand-mauve);">Create Member Account</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
