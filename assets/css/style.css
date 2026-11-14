@@ -230,13 +230,48 @@ h1, h2, h3, h4, h5, h6,
    Uniform Non-Home Page Hero (Consistent Height Across About, Classes, Trainers, Contact)
    ========================================================================== */
 .page-hero-valera {
-  min-height: 360px;
+  min-height: 480px;
   display: flex;
   align-items: center;
   padding-top: var(--space-8);
   padding-bottom: var(--space-8);
   background-color: var(--bg-secondary);
   border-bottom: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+.page-hero-valera .page-hero-img-box {
+  height: 320px;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background-color: var(--bg-surface);
+}
+
+.page-hero-valera .page-hero-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (min-width: 992px) {
+  .page-hero-valera {
+    min-height: 480px;
+    height: 480px;
+  }
+
+  .page-hero-valera .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .page-hero-valera .row {
+    width: 100%;
+    align-items: center;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -244,6 +279,10 @@ h1, h2, h3, h4, h5, h6,
     min-height: auto;
     padding-top: var(--space-7);
     padding-bottom: var(--space-7);
+  }
+
+  .page-hero-valera .page-hero-img-box {
+    height: 260px;
   }
 }
 
@@ -787,6 +826,7 @@ h1, h2, h3, h4, h5, h6,
   cursor: pointer;
   padding: 0;
   transition: all var(--transition-fast);
+  flex-shrink: 0;
 }
 
 .valera-hamburger:hover {
@@ -1924,10 +1964,160 @@ body.dashboard-page {
   aspect-ratio: 4 / 3;
 }
 
+/* Ensure the editorial-card content column always stretches full height */
+.editorial-card > [class*="col-"] {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+}
+
 @media (min-width: 1200px) {
   .editorial-card.flex-xl-row > .col-xl-5.editorial-img-wrap {
     aspect-ratio: auto;
     min-height: 100%;
+    width: 41.66666667%;
+    flex: 0 0 41.66666667%;
+  }
+
+  .editorial-card.flex-xl-row > .col-xl-7 {
+    width: 58.33333333%;
+    flex: 1 1 58.33333333%;
+  }
+}
+
+/* Consistent Testimonial Avatar Circle Size */
+.testimonial-avatar {
+  width: 52px !important;
+  height: 52px !important;
+  min-width: 52px !important;
+  min-height: 52px !important;
+  max-width: 52px !important;
+  max-height: 52px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  flex-shrink: 0 !important;
+  aspect-ratio: 1 / 1 !important;
+  display: block;
+}
+
+/* Elena Rostova Coach Image Framing */
+.elena-coach-img,
+img[alt*="Elena Rostova"] {
+  object-position: top center !important;
+}
+
+/* Trainer Cards Height & Button Alignment */
+.trainer-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.trainer-card .row {
+  height: 100%;
+  align-items: stretch !important;
+}
+
+.trainer-card .col-xl-7 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  flex: 1 1 auto;
+}
+
+.trainer-card .btn-valera-primary {
+  margin-top: auto;
+}
+
+.trainer-card .expertise-tag {
+  white-space: normal;
+}
+
+/* Home 2 Hero Image & Badge Clearance */
+.hero-2-badge-card {
+  position: relative;
+  z-index: 5;
+  max-width: 300px;
+}
+
+@media (max-width: 991.98px) {
+  .hero-2-badge-card {
+    margin-top: 1.5rem !important;
+  }
+}
+
+/* Floating Actions on Auth Pages (Login & Sign Up) */
+.auth-top-actions {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+[dir="rtl"] .auth-top-actions {
+  right: auto;
+  left: 1.25rem;
+}
+
+/* Dashboard Renew Membership Button Responsiveness */
+#dashRenewForm .btn-valera-primary,
+.dashRenewForm .btn-valera-primary {
+  white-space: normal !important;
+  text-align: center;
+  max-width: 100%;
+}
+
+@media (max-width: 767.98px) {
+  #dashRenewForm .d-flex {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+
+  #dashRenewForm .btn-valera-primary {
+    width: 100% !important;
+  }
+}
+
+/* Mobile Polish: Prevent Button Cropping & Hamburger Overflow */
+@media (max-width: 575.98px) {
+  .navbar-brand-valera .brand-title {
+    font-size: 1.35rem;
+  }
+
+  .navbar-brand-valera .brand-subtitle {
+    display: none;
+  }
+
+  .brand-icon-mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .brand-icon-mark svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .valera-navbar .container-fluid {
+    padding-left: 0.85rem !important;
+    padding-right: 0.85rem !important;
+  }
+
+  .editorial-card .p-4 {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .editorial-card .btn-valera-primary,
+  .trainer-card .btn-valera-primary {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+    font-size: 0.8rem;
   }
 }
 

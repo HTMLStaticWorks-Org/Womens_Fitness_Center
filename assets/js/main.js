@@ -81,7 +81,8 @@
     applyDir(getSavedDir());
 
     document.querySelectorAll('[data-theme-toggle]').forEach((btn) => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
         const current = document.documentElement.getAttribute('data-theme') || 'light';
         const next = current === 'dark' ? 'light' : 'dark';
         try {
@@ -94,7 +95,8 @@
     });
 
     document.querySelectorAll('[data-rtl-toggle]').forEach((btn) => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
         const current = document.documentElement.getAttribute('dir') || 'ltr';
         const next = current === 'rtl' ? 'ltr' : 'rtl';
         try {
@@ -159,6 +161,11 @@
 
     // Close dropdowns & mobile drawer when clicking outside
     document.addEventListener('click', (e) => {
+      // Never close drawers or dropdowns if clicking theme toggle or RTL toggle
+      if (e.target.closest('[data-theme-toggle]') || e.target.closest('[data-rtl-toggle]')) {
+        return;
+      }
+
       dropdowns.forEach((dropdown) => {
         if (!dropdown.contains(e.target)) {
           dropdown.classList.remove('open');
