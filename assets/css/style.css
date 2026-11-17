@@ -230,18 +230,16 @@ h1, h2, h3, h4, h5, h6,
    Uniform Non-Home Page Hero (Consistent Height Across About, Classes, Trainers, Contact)
    ========================================================================== */
 .page-hero-valera {
-  min-height: 480px;
+  min-height: 520px;
   display: flex;
   align-items: center;
-  padding-top: var(--space-8);
-  padding-bottom: var(--space-8);
   background-color: var(--bg-secondary);
   border-bottom: 1px solid var(--border-subtle);
   position: relative;
 }
 
 .page-hero-valera .page-hero-img-box {
-  height: 320px;
+  height: 340px;
   width: 100%;
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -258,10 +256,11 @@ h1, h2, h3, h4, h5, h6,
 
 @media (min-width: 992px) {
   .page-hero-valera {
-    min-height: 480px;
-    height: auto;
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
+    height: 520px !important;
+    min-height: 520px !important;
+    max-height: 520px;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
   }
 
   .page-hero-valera .container {
@@ -274,9 +273,25 @@ h1, h2, h3, h4, h5, h6,
     width: 100%;
     align-items: center;
   }
+
+  .page-hero-valera .page-hero-img-box {
+    height: 340px;
+  }
 }
 
-@media (max-width: 991.98px) {
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .page-hero-valera {
+    min-height: 500px;
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-8);
+  }
+
+  .page-hero-valera .page-hero-img-box {
+    height: 280px;
+  }
+}
+
+@media (max-width: 767.98px) {
   .page-hero-valera {
     min-height: auto;
     padding-top: var(--space-7);
@@ -284,7 +299,7 @@ h1, h2, h3, h4, h5, h6,
   }
 
   .page-hero-valera .page-hero-img-box {
-    height: 260px;
+    height: 240px;
   }
 }
 
